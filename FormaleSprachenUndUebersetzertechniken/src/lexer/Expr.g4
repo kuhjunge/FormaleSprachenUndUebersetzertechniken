@@ -20,7 +20,6 @@ FLOAT: DIGIT+ '.' DIGIT* // match 1. 39. 3.14159 etc...
 | '.' DIGIT+ // match .1 .14159
 ;
 
-//ID : [a-z]+ ;             	// match lower-case identifiers
 INT : DIGIT+;				// match 1 or more digits
 fragment DIGIT : [0-9] ;	// match 1 digit
 PLUS : '+' ;
