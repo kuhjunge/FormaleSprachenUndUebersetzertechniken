@@ -7,8 +7,6 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -55,7 +53,7 @@
       </MenuBar>
       <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="319.0" prefWidth="227.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="372.0" text="Lade von Datei" />
+            <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#loadFromFile" prefHeight="25.0" prefWidth="372.0" text="Lade von Datei" />
             <Button layoutX="15.0" layoutY="258.0" mnemonicParsing="false" onAction="#evalPostFix" prefHeight="25.0" prefWidth="372.0" text="Auswerten" />
             <TextArea fx:id="textAreaInput" layoutX="14.0" layoutY="49.0" prefHeight="200.0" prefWidth="372.0" text="4.0 5 ^ 5.0 2 * / 4! +" />
             <TextField fx:id="textFieldResult" layoutX="14.0" layoutY="290.0" prefHeight="25.0" prefWidth="372.0" />
