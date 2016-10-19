@@ -85,5 +85,19 @@ public class TestSuitePostfix {
 		System.out.println(test);
 		assertTrue(test == 126.4);
 	}
+	
+	@Test
+	public void doubleTest() {
+		double test = Postfix.evalPostfix("4.0 5 ^ 5.0 2 * / 4! +"+ end);
+		System.out.println(test);
+		assertTrue(test == 126.4);
+	}
 
+	@Test
+	public void double2Test() {
+		double test = Postfix.evalPostfix(".4 0.5 +" + end);
+		System.out.println(test);
+		assertTrue(test == 0.9);
+	}
+	
 }

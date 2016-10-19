@@ -17,12 +17,12 @@ public class Postfix {
 
 	private static double calculatePostfix(ExprLexer n) {
 		Stack<Double> s = new ArrayStack<>();
+		MathOperationFactory mof= MathOperationFactory.init();
 		Token t = n.nextToken();
 		while (t.getType() != Recognizer.EOF) {
-			if (t.getType() == ExprLexer.INT) {
+			if (t.getType() == ExprLexer.INT || t.getType() == ExprLexer.FLOAT) {
 				s.push(Double.parseDouble(t.getText()));
 			} else {
-				MathOperationFactory mof= MathOperationFactory.init();
 				mof.executeCommand(t.getType(), s);
 			}
 			t = n.nextToken();
