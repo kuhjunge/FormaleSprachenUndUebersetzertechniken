@@ -54,7 +54,7 @@ public final class MathOperationFactory {
 		MathOperationFactory mof = new MathOperationFactory();
 		mof.addCommand(ExprLexer.PLUS, (s) -> s.push(s.popTop() + s.popTop()));
 		mof.addCommand(ExprLexer.MINUS, (s) -> s.push(s.pop2ndTop() - s.popTop()));
-		mof.addCommand(ExprLexer.INV, (s) -> s.push(s.popTop() * (-1)));
+		mof.addCommand(ExprLexer.INV, (s) -> s.push(-s.popTop()));
 		mof.addCommand(ExprLexer.MUL, (s) -> s.push(s.popTop() * s.popTop()));
 		mof.addCommand(ExprLexer.DIV, (s) -> s.push(s.pop2ndTop() / s.popTop()));
 		mof.addCommand(ExprLexer.EXP, (s) -> s.push(Math.pow(s.pop2ndTop(), s.popTop())));

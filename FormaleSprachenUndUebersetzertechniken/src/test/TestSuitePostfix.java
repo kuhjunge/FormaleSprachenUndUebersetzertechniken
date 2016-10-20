@@ -52,6 +52,27 @@ public class TestSuitePostfix {
 	}
 	
 	@Test
+	public void neg2Test() {
+		double test = Postfix.evalPostfix(" -4 " + end);
+		System.out.println(test);
+		assertTrue(test == -4);
+	}
+	
+	@Test
+	public void neg3Test() {
+		double test = Postfix.evalPostfix(" -0.4 " + end);
+		System.out.println(test);
+		assertTrue(test == -0.4);
+	}
+	
+	@Test
+	public void neg5Test() {
+		double test = Postfix.evalPostfix(" -4 -5 - " + end);
+		System.out.println(test);
+		assertTrue(test == 1);
+	}
+	
+	@Test
 	public void facTest() {
 		double test = Postfix.evalPostfix(" 5 !" + end);
 		System.out.println(test);
@@ -98,6 +119,21 @@ public class TestSuitePostfix {
 		double test = Postfix.evalPostfix(".4 0.5 +" + end);
 		System.out.println(test);
 		assertTrue(test == 0.9);
+	}
+	
+	@Test
+	public void simon1Test() { // ( -(((10 + 2 - 5) * 2) + 6) / 20) ^ 1
+		double test = Postfix.evalPostfix("10 2 + 5 - 2 * # 6 + 20 / 1 ^" + end);
+		System.out.println(test);
+		assertTrue(test == -0.4);
+	}
+	
+	
+	@Test
+	public void simon2Test() {
+		double test = Postfix.evalPostfix("10 2 +" + end);
+		System.out.println(test);
+		assertTrue(test == 12);
 	}
 	
 }

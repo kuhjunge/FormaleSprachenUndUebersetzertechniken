@@ -1,5 +1,5 @@
 /**
- * Define a grammar called Hello
+ * Define a grammar called Expr
  */
 grammar Expr;
 r  : test+ ;        	// match keyword hello followed by an identifier
@@ -13,15 +13,15 @@ test: INT
 	| INV
 	| EXP
 	| FAC
-	| WS
+	| IGNORE
 	;
 
 FLOAT: DIGIT+ '.' DIGIT* // match 1. 39. 3.14159 etc...
 | '.' DIGIT+ // match .1 .14159
+| '-' DIGIT+ '.' DIGIT*
 ;
 
-INT : DIGIT+;				// match 1 or more digits
-fragment DIGIT : [0-9] ;	// match 1 digit
+INT : DIGIT+ | '-'DIGIT+;				// match 1 or more digits
 PLUS : '+' ;
 MINUS : '-' ;
 MUL : '*' ;
@@ -31,4 +31,8 @@ EXP : '^' ;
 FAC : '!' ;
 //LINE_COMMENT : '//' .*? '\n' -> skip ;
 //COMMENT : '/*' .*? '*/' -> skip ;
-WS : [ \t\r\n]+ -> skip ; 	// skip spaces, tabs, newlines
+IGNORE : ( LETTER+ | WHITESPACE+ ) -> skip ; 	// skip spaces, tabs, newlines
+
+fragment DIGIT : [0-9] ;	// match 1 digit
+fragment LETTER: [a-zA-Z];
+fragment WHITESPACE : [ \t\r\n]  ;
