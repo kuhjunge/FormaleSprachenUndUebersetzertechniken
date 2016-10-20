@@ -84,4 +84,15 @@ public class ListStack<E> extends VStack<E> {
 			anz--;
 		}
 	}
+
+	@Override
+	public int enthaelt() {
+		int i = 0;
+		Zelle<E> x = this.top;
+		while (x != null){
+			x = x.getNext();
+			i++;
+		}
+		return i;
+	}
 }

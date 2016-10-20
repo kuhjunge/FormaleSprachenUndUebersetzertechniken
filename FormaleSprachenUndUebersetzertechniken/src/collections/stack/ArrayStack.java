@@ -57,11 +57,6 @@ public class ArrayStack<E> extends VStack<E> {
 		}
 	}
 
-	/**
-	 * Prüft ob der Stack leer ist
-	 * 
-	 * @return True falls leer, sonst false
-	 */
 	@Override
 	public boolean istLeer() {
 		return this.top == -1;
@@ -147,6 +142,28 @@ public class ArrayStack<E> extends VStack<E> {
 			i--;
 		}
 	}
-	
+
+	public int size() {
+		return this.top + 1;
+	}
+
+	public boolean contains(E e) {
+		boolean erg = false;
+		for(E element : this.array) {
+			if (element == e){
+				erg = true;
+			}
+		}
+		return erg;
+	}
+
+
+	@Override
+	public int enthaelt() {
+		return size();
+	}
+
+
+
 
 }

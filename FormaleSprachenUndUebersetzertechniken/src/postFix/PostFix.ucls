@@ -102,22 +102,26 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <realization id="12">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <association id="13">    
+  <association id="12">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="14" name="commandMap"/>      
-      <multiplicity id="15" minimum="0" maximum="2147483647"/>    
+      <attribute id="13" name="commandMap">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="16">    
+  <nesting id="15">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="5"/>  
   </nesting>  
+  <realization id="16">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
   <nesting id="17">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="8"/>  

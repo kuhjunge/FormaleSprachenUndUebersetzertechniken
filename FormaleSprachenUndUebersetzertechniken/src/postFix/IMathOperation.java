@@ -1,7 +1,6 @@
 package postFix;
 
-import collections.stack.Stack;
-
+import postFix.stack.IStackAdapter;
 /**
  * The Command functional interface.<br/>
  */
@@ -13,5 +12,5 @@ interface IMathOperation {
 	 * @param s
 	 *            der Stack
 	 */
-	void opOnStack(Stack<Double> s);
+	void opOnStack(IStackAdapter<Double> s);
 }

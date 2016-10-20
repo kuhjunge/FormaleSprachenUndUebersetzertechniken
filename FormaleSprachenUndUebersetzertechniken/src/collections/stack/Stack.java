@@ -35,17 +35,15 @@ public interface Stack<E> {
 	E popTop();
 
 	/**
-	 * gibt das zweite Element, welches unter dem ersten Element zurück
-	 * 
-	 * @return
-	 */
-	E pop2ndTop();
-
-	/**
 	 * Entfernt eine bestimmte Anzahl von Elemente vom Stack
 	 * 
 	 * @param anzahl
 	 */
 	void multiPop(int anzahl);
+	/**
+	 * Gibt die Anzahl der Elemente zurück
+	 * @return
+	 */
+	int enthaelt();
 
 }

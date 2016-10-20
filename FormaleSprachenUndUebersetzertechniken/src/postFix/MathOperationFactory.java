@@ -1,9 +1,10 @@
 package postFix;
 
 import java.util.HashMap;
-import java.util.Map;
+import postFix.Exception.*;
+import postFix.stack.IStackAdapter;
 
-import collections.stack.Stack;
+import java.util.Map;
 import lexer.ExprLexer;
 
 /**
@@ -39,9 +40,11 @@ public final class MathOperationFactory {
 	 *            Hier ID des Token Typen, welche die Operation representiert
 	 * @param s
 	 */
-	public void executeCommand(Integer id, Stack<Double> s) {
+	public void executeCommand(Integer id, IStackAdapter<Double> s) throws UnknownMathOperationException {
 		if (this.commandMap.containsKey(id)) {
 			this.commandMap.get(id).opOnStack(s);
+		} else {
+			throw new UnknownMathOperationException("Operation nicht bekannt");
 		}
 	}
 
@@ -52,13 +55,13 @@ public final class MathOperationFactory {
 	 */
 	public static MathOperationFactory init() {
 		MathOperationFactory mof = new MathOperationFactory();
-		mof.addCommand(ExprLexer.PLUS, (s) -> s.push(s.popTop() + s.popTop()));
-		mof.addCommand(ExprLexer.MINUS, (s) -> s.push(s.pop2ndTop() - s.popTop()));
-		mof.addCommand(ExprLexer.INV, (s) -> s.push(-s.popTop()));
-		mof.addCommand(ExprLexer.MUL, (s) -> s.push(s.popTop() * s.popTop()));
-		mof.addCommand(ExprLexer.DIV, (s) -> s.push(s.pop2ndTop() / s.popTop()));
-		mof.addCommand(ExprLexer.EXP, (s) -> s.push(Math.pow(s.pop2ndTop(), s.popTop())));
-		mof.addCommand(ExprLexer.FAC, (s) -> s.push(calcFac(s.popTop())));
+		mof.addCommand(ExprLexer.PLUS, (s) -> s.push(s.pop() + s.pop()));
+		mof.addCommand(ExprLexer.MINUS, (s) -> s.push(s.pop2nd() - s.pop()));
+		mof.addCommand(ExprLexer.INV, (s) -> s.push(-s.pop()));
+		mof.addCommand(ExprLexer.MUL, (s) -> s.push(s.pop() * s.pop()));
+		mof.addCommand(ExprLexer.DIV, (s) -> s.push(s.pop2nd() / s.pop()));
+		mof.addCommand(ExprLexer.EXP, (s) -> s.push(Math.pow(s.pop2nd(), s.pop())));
+		mof.addCommand(ExprLexer.FAC, (s) -> s.push(calcFac(s.pop())));
 		return mof;
 	}
 
