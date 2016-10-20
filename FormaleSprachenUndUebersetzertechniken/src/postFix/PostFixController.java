@@ -15,6 +15,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import postFix.Exception.PostFixExpressionException;
+import postFix.Exception.UnknownMathOperationException;
 
 public class PostFixController extends Application {
 
@@ -74,8 +76,10 @@ public class PostFixController extends Application {
 	protected void evalPostFix() {
 		try {
 			this.textFieldResult.setText(Postfix.evalPostfix(this.textAreaInput.getText()) + "");
-		} catch (@SuppressWarnings("unused") Exception e) {
-			this.textFieldResult.setText("Fehlerhafte Eingabe!");
+		} catch(PostFixExpressionException e){
+			this.textFieldResult.setText(e.getMessage());
+		} catch (UnknownMathOperationException e) {
+			this.textFieldResult.setText(e.getMessage());
 		}
 	}
 

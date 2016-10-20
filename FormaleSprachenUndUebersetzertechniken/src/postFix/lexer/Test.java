@@ -1,4 +1,4 @@
-package lexer;
+package postFix.lexer;
 
 import org.antlr.v4.runtime.*;
 

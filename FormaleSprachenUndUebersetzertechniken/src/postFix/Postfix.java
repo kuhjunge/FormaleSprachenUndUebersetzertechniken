@@ -4,9 +4,9 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.Token;
 
-import lexer.*;
 import postFix.Exception.PostFixExpressionException;
 import postFix.Exception.UnknownMathOperationException;
+import postFix.lexer.*;
 import postFix.stack.IStackAdapter;
 //import postFix.stack.StackCustom;
 import postFix.stack.StackStandard;
@@ -25,7 +25,7 @@ public class Postfix {
 	public static double evalPostfix(String eingabe) throws UnknownMathOperationException, PostFixExpressionException {
 		ANTLRInputStream input = new ANTLRInputStream(eingabe.toCharArray(), eingabe.length());
 		ExprLexer n = new ExprLexer(input);
-		if (eingabe.length() < 2){
+		if (eingabe.trim().length() < 1){
 			throw new PostFixExpressionException("Ausdruck ist zu kurz");
 		}
 		return calculatePostfix(n);
@@ -60,7 +60,7 @@ public class Postfix {
 		try {
 		mof.executeCommand(t.getType(), s);
 		} catch(Exception e){
-			throw new PostFixExpressionException("Ausdruck nicht gültig! (" + e.getMessage()+")");
+			throw new PostFixExpressionException("Ausdruck nicht gültig! (" + e.toString()+")");
 		}
 	}
 

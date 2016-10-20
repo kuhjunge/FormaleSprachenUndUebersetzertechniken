@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <interface id="1" language="java" name="postFix.IMathOperation" project="FormaleSprachenUndUebersetzertechniken" 
     file="/FormaleSprachenUndUebersetzertechniken/src/postFix/IMathOperation.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1223" y="-65"/>    
+    <position height="-1" width="-1" x="1392" y="-66"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </interface>  
   <class id="2" language="java" name="postFix.Postfix" project="FormaleSprachenUndUebersetzertechniken" 
     file="/FormaleSprachenUndUebersetzertechniken/src/postFix/Postfix.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="843" y="-12"/>    
+    <position height="-1" width="-1" x="1010" y="164"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   <class id="3" language="java" name="postFix.PostFixController" project="FormaleSprachenUndUebersetzertechniken" 
     file="/FormaleSprachenUndUebersetzertechniken/src/postFix/PostFixController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="849" y="307"/>    
+    <position height="-1" width="-1" x="900" y="518"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -32,15 +32,17 @@
   <class id="4" language="java" name="postFix.MathOperationFactory" project="FormaleSprachenUndUebersetzertechniken" 
     file="/FormaleSprachenUndUebersetzertechniken/src/postFix/MathOperationFactory.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1213" y="141"/>    
+    <position height="-1" width="-1" x="1424" y="165"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="lexer.ExprParser.TestContext" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprParser.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="postFix.lexer.ExprParser.TestContext" 
+    project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="315" width="195" x="-116" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -48,17 +50,19 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="lexer.ExprListener" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprListener.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="571" y="230"/>    
+  <interface id="6" language="java" name="postFix.lexer.ExprListener" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprListener.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="586" y="230"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="lexer.ExprParser" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprParser.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="postFix.lexer.ExprParser" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="603" width="255" x="-116" y="-106"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -66,8 +70,10 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="lexer.ExprParser.RContext" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprParser.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="postFix.lexer.ExprParser.RContext" 
+    project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="171" width="192" x="119" y="537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -75,8 +81,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="lexer.ExprLexer" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprLexer.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="postFix.lexer.ExprLexer" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprLexer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="567" width="255" x="179" y="-106"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -84,8 +90,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="lexer.ExprBaseListener" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/lexer/ExprBaseListener.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="postFix.lexer.ExprBaseListener" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/lexer/ExprBaseListener.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="225" width="221" x="474" y="-106"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -93,39 +100,90 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="11" language="java" name="collections.stack.Stack" project="FormaleSprachenUndUebersetzertechniken" 
-    file="/FormaleSprachenUndUebersetzertechniken/src/collections/stack/Stack.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1022" y="-6"/>    
+  <class id="11" language="java" name="postFix.Exception.UnknownMathOperationException" 
+    project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/Exception/UnknownMathOperationException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1391" y="308"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="postFix.Exception.PostFixExpressionException" 
+    project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/Exception/PostFixExpressionException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="926" y="306"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="13" language="java" name="postFix.stack.IStackAdapter" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/stack/IStackAdapter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1676" y="-33"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <association id="12">    
+  <class id="14" language="java" name="postFix.stack.StackCustom" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/stack/StackCustom.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="122" x="1616" y="146"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="postFix.stack.StackStandard" project="FormaleSprachenUndUebersetzertechniken" 
+    file="/FormaleSprachenUndUebersetzertechniken/src/postFix/stack/StackStandard.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="130" x="1778" y="146"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="16">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <realization id="17">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="18">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="13" name="commandMap">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="19" name="commandMap">        
+        <position height="0" width="0" x="169" y="-1"/>      
       </attribute>      
-      <multiplicity id="14" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="20" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="169" y="-1"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="15">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
-  </nesting>  
-  <realization id="16">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <nesting id="17">    
+  <nesting id="21">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="8"/>  
   </nesting>  
+  <realization id="22">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.Token;
 
 import collections.stack.*;
-import lexer.*;
+import postFix.lexer.*;
 
 public class PostFixOld {
 

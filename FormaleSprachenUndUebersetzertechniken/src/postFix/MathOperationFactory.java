@@ -2,10 +2,10 @@ package postFix;
 
 import java.util.HashMap;
 import postFix.Exception.*;
+import postFix.lexer.ExprLexer;
 import postFix.stack.IStackAdapter;
 
 import java.util.Map;
-import lexer.ExprLexer;
 
 /**
  * The CommandFactory class.<br/>
