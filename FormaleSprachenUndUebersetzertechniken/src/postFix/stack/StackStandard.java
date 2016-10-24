@@ -22,7 +22,6 @@ public class StackStandard<E> implements IStackAdapter<E> {
 
 	@Override
 	public E pop() {
-		// TODO Auto-generated method stub
 		return this.s.pop();
 	}
 

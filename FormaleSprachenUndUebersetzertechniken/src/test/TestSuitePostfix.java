@@ -17,8 +17,22 @@ public class TestSuitePostfix {
 	}
 
 	@Test
+	public void expTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 5 EXP" + end);
+		System.out.println(test);
+		assertTrue(test == 1024);
+	}
+	
+	@Test
 	public void addTest() throws Exception {
 		double test = Postfix.evalPostfix("4 5 +" + end);
+		System.out.println(test);
+		assertTrue(test == 9);
+	}
+	
+	@Test
+	public void addTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 5 ADD" + end);
 		System.out.println(test);
 		assertTrue(test == 9);
 	}
@@ -31,8 +45,22 @@ public class TestSuitePostfix {
 	}
 
 	@Test
+	public void subTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 5 SUB" + end);
+		System.out.println(test);
+		assertTrue(test == -1);
+	}
+	
+	@Test
 	public void divTest() throws Exception {
 		double test = Postfix.evalPostfix("4 5 /" + end);
+		System.out.println(test);
+		assertTrue(test == 0.8);
+	}
+	
+	@Test
+	public void divTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 5 DIV" + end);
 		System.out.println(test);
 		assertTrue(test == 0.8);
 	}
@@ -43,7 +71,21 @@ public class TestSuitePostfix {
 		System.out.println(test);
 		assertTrue(test == 20);
 	}
+	
+	@Test
+	public void mulTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 5 MUL" + end);
+		System.out.println(test);
+		assertTrue(test == 20);
+	}
 
+	@Test
+	public void negTestS() throws Exception {
+		double test = Postfix.evalPostfix("4 INV" + end);
+		System.out.println(test);
+		assertTrue(test == -4);
+	}
+	
 	@Test
 	public void negTest() throws Exception {
 		double test = Postfix.evalPostfix("4 #" + end);
@@ -79,6 +121,13 @@ public class TestSuitePostfix {
 		assertTrue(test == 120);
 	}
 
+	@Test
+	public void facTestS() throws Exception {
+		double test = Postfix.evalPostfix(" 5 FAC" + end);
+		System.out.println(test);
+		assertTrue(test == 120);
+	}
+	
 	@Test
 	public void completeTest1() throws Exception {
 		double test = Postfix.evalPostfix("3 # 3 8 4 / 2 ^ * 9 - +" + end);

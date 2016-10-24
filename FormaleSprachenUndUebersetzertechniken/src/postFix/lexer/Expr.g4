@@ -22,13 +22,13 @@ FLOAT: DIGIT+ '.' DIGIT* // match 1. 39. 3.14159 etc...
 ;
 
 INT : DIGIT+ | '-'DIGIT+;				// match 1 or more digits
-PLUS : '+' ;
-MINUS : '-' ;
-MUL : '*' ;
-DIV : '/' ;
-INV : '#' ;
-EXP : '^' ;
-FAC : '!' ;
+PLUS : '+' | 'ADD';
+MINUS : '-' | 'SUB';
+MUL : '*' | 'MUL';
+DIV : '/' | 'DIV';
+INV : '#' | 'INV';
+EXP : '^' | 'EXP';
+FAC : '!'| 'FAC';
 //LINE_COMMENT : '//' .*? '\n' -> skip ;
 //COMMENT : '/*' .*? '*/' -> skip ;
 IGNORE : ( LETTER+ | WHITESPACE+ ) -> skip ; 	// skip spaces, tabs, newlines

@@ -3,11 +3,13 @@ package test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import org.antlr.runtime.*;
+import org.antlr.v4.runtime.*;
 import org.junit.Test;
 
 import collections.list.*;
 import halstead.*;
+//import muell.HalsteadLexer;
+import halstead.lexer.*;
 
 import static org.junit.Assert.*;
 
@@ -28,14 +30,14 @@ public class TestSuiteHalstead {
 		File bla = new File(file);
 		System.setIn(new FileInputStream(bla));
 		input = new ANTLRInputStream(System.in);
-		HalsteadLexer lex = new HalsteadLexer(input);
+		CLexer lex = new CLexer(input);
 		Token t = lex.nextToken();
-		while (t == null || t.getType() != HalsteadLexer.EOF) {// Token.EOF
+		while (t == null || t.getType() != CLexer.EOF) {// Token.EOF
 																// works as
-			if (t.getType() == HalsteadLexer.OPERATOR) {
+			if (t.getType() == CLexer.OPERATOR) {
 				listOperator.add(t.getText());
 			}
-			if (t.getType() == HalsteadLexer.OPERAND) {
+			if (t.getType() == CLexer.OPERAND) {
 				listOperant.add(t.getText());
 			}
 			t = lex.nextToken();

@@ -1,5 +1,4 @@
-package muell;
-
+package muell.exprLexer;
 
 public class Token {
 	private int type;

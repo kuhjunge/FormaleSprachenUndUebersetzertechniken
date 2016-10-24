@@ -1,4 +1,4 @@
-package muell;
+package muell.exprLexer;
 
 /***
  * Excerpted from "Language Implementation Patterns", published by The Pragmatic
