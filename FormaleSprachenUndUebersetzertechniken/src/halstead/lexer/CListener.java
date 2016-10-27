@@ -18,13 +18,13 @@ public interface CListener extends ParseTreeListener {
 	 */
 	void exitR(CParser.RContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link CParser#test}.
+	 * Enter a parse tree produced by {@link CParser#allTokens}.
 	 * @param ctx the parse tree
 	 */
-	void enterTest(CParser.TestContext ctx);
+	void enterAllTokens(CParser.AllTokensContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link CParser#test}.
+	 * Exit a parse tree produced by {@link CParser#allTokens}.
 	 * @param ctx the parse tree
 	 */
-	void exitTest(CParser.TestContext ctx);
+	void exitAllTokens(CParser.AllTokensContext ctx);
 }

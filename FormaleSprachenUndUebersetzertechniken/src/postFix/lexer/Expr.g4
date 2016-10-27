@@ -35,4 +35,4 @@ IGNORE : ( LETTER+ | WHITESPACE+ ) -> skip ; 	// skip spaces, tabs, newlines
 
 fragment DIGIT : [0-9] ;	// match 1 digit
 fragment LETTER: [a-zA-Z];
-fragment WHITESPACE : [ \t\r\n]  ;
+fragment WHITESPACE : [ \t\r\n] ;

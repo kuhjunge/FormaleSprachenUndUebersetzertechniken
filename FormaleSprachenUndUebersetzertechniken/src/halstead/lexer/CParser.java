@@ -17,21 +17,21 @@ public class CParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		IGNORE=1, OPERATOR=2, OPERAND=3, OPERATORS=4, RESERVED=5, TYPE_QUAL=6, 
-		SCSPEC=7, CONSTANT=8, TYPESPEC=9, IDENTIFIER=10, IGNORESYMBOLS=11, INCLUDE=12, 
-		FLOAT=13, INT=14, LINE_COMMENT=15, COMMENT=16;
+		OPERATOR=1, IGNORE=2, OPERAND=3, RESERVED=4, OPERATORS=5, TYPE_QUAL=6, 
+		SCSPEC=7, CONSTANT=8, TYPESPEC=9, IDENTIFIER=10, FLOAT=11, INT=12, LINE_COMMENT=13, 
+		COMMENT=14, INCLUDE=15, ALOTOFWHITESPACE=16, IGNORESYMBOLS=17;
 	public static final int
-		RULE_r = 0, RULE_test = 1;
+		RULE_r = 0, RULE_allTokens = 1;
 	public static final String[] ruleNames = {
-		"r", "test"
+		"r", "allTokens"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "IGNORE", "OPERATOR", "OPERAND", "OPERATORS", "RESERVED", "TYPE_QUAL", 
-		"SCSPEC", "CONSTANT", "TYPESPEC", "IDENTIFIER", "IGNORESYMBOLS", "INCLUDE", 
-		"FLOAT", "INT", "LINE_COMMENT", "COMMENT"
+		null, "OPERATOR", "IGNORE", "OPERAND", "RESERVED", "OPERATORS", "TYPE_QUAL", 
+		"SCSPEC", "CONSTANT", "TYPESPEC", "IDENTIFIER", "FLOAT", "INT", "LINE_COMMENT", 
+		"COMMENT", "INCLUDE", "ALOTOFWHITESPACE", "IGNORESYMBOLS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -83,11 +83,11 @@ public class CParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 	public static class RContext extends ParserRuleContext {
-		public List<TestContext> test() {
-			return getRuleContexts(TestContext.class);
+		public List<AllTokensContext> allTokens() {
+			return getRuleContexts(AllTokensContext.class);
 		}
-		public TestContext test(int i) {
-			return getRuleContext(TestContext.class,i);
+		public AllTokensContext allTokens(int i) {
+			return getRuleContext(AllTokensContext.class,i);
 		}
 		public RContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -117,13 +117,13 @@ public class CParser extends Parser {
 				{
 				{
 				setState(4);
-				test();
+				allTokens();
 				}
 				}
 				setState(7); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IGNORE) | (1L << OPERATOR) | (1L << OPERAND) | (1L << FLOAT) | (1L << INT))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPERATOR) | (1L << IGNORE) | (1L << OPERAND))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -137,36 +137,34 @@ public class CParser extends Parser {
 		return _localctx;
 	}
 
-	public static class TestContext extends ParserRuleContext {
-		public TerminalNode INT() { return getToken(CParser.INT, 0); }
-		public TerminalNode FLOAT() { return getToken(CParser.FLOAT, 0); }
+	public static class AllTokensContext extends ParserRuleContext {
 		public TerminalNode OPERATOR() { return getToken(CParser.OPERATOR, 0); }
 		public TerminalNode OPERAND() { return getToken(CParser.OPERAND, 0); }
 		public TerminalNode IGNORE() { return getToken(CParser.IGNORE, 0); }
-		public TestContext(ParserRuleContext parent, int invokingState) {
+		public AllTokensContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_test; }
+		@Override public int getRuleIndex() { return RULE_allTokens; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CListener ) ((CListener)listener).enterTest(this);
+			if ( listener instanceof CListener ) ((CListener)listener).enterAllTokens(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CListener ) ((CListener)listener).exitTest(this);
+			if ( listener instanceof CListener ) ((CListener)listener).exitAllTokens(this);
 		}
 	}
 
-	public final TestContext test() throws RecognitionException {
-		TestContext _localctx = new TestContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_test);
+	public final AllTokensContext allTokens() throws RecognitionException {
+		AllTokensContext _localctx = new AllTokensContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_allTokens);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(9);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IGNORE) | (1L << OPERATOR) | (1L << OPERAND) | (1L << FLOAT) | (1L << INT))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << OPERATOR) | (1L << IGNORE) | (1L << OPERAND))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
@@ -185,10 +183,10 @@ public class CParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\22\16\4\2\t\2\4\3"+
-		"\t\3\3\2\6\2\b\n\2\r\2\16\2\t\3\3\3\3\3\3\2\2\4\2\4\2\3\4\2\3\5\17\20"+
-		"\f\2\7\3\2\2\2\4\13\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t\3\2\2\2\t\7\3"+
-		"\2\2\2\t\n\3\2\2\2\n\3\3\2\2\2\13\f\t\2\2\2\f\5\3\2\2\2\3\t";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\23\16\4\2\t\2\4\3"+
+		"\t\3\3\2\6\2\b\n\2\r\2\16\2\t\3\3\3\3\3\3\2\2\4\2\4\2\3\3\2\3\5\f\2\7"+
+		"\3\2\2\2\4\13\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t\3\2\2\2\t\7\3\2\2\2"+
+		"\t\n\3\2\2\2\n\3\3\2\2\2\13\f\t\2\2\2\f\5\3\2\2\2\3\t";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

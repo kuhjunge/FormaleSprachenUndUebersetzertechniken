@@ -28,13 +28,13 @@ public class CBaseListener implements CListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTest(CParser.TestContext ctx) { }
+	@Override public void enterAllTokens(CParser.AllTokensContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTest(CParser.TestContext ctx) { }
+	@Override public void exitAllTokens(CParser.AllTokensContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
