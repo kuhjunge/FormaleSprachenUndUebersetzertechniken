@@ -11,8 +11,8 @@ r  : allTokens+ ;        	// match keyword hello followed by an identifier
 allTokens: OPERATOR | OPERAND | IGNORE;
 
 OPERATOR:  RESERVED | TYPE_QUAL | SCSPEC | OPERATORS;
-IGNORE: IGNORESYMBOLS | INCLUDE |  ALOTOFWHITESPACE | COMMENT | LINE_COMMENT ;
-OPERAND: CONSTANT | TYPESPEC | IDENTIFIER | INT | FLOAT;
+IGNORE: IGNORESYMBOLS2 | INCLUDE |  ALOTOFWHITESPACE | COMMENT | LINE_COMMENT | IGNORESYMBOLS;
+OPERAND:  TYPESPEC | IDENTIFIER | INT | FLOAT | STRING | CONSTANT;
 
 
 RESERVED : 'if' WHITESPACE* '(' | 'if' | 'asm' | 'break'|
@@ -22,7 +22,6 @@ RESERVED : 'if' WHITESPACE* '(' | 'if' | 'asm' | 'break'|
 'throw'| 'const_cast'| 'static_cast'| 'dynamic_cast'| 'reiznterpret_cast'|
 'typeid'| 'template'| 'explicit'| 'true'| 'false'| 'typename' ;
 
-
 OPERATORS : '!'|'!='|'%'|'%='|'&'|'&&'|'&='|'*'|'*='
 |'+'|'++'|'+='|','|'-'|'--'|'-='|'->'|'...'|'/'
 |'/='|'::'|'<'|'<<'|'<<='|'<='|'=='|'>'|'>='|'>>'
@@ -31,6 +30,8 @@ OPERATORS : '!'|'!='|'%'|'%='|'&'|'&&'|'&='|'*'|'*='
 TYPE_QUAL: 'const'|'friend'|'volatile';
 
 SCSPEC : 'auto'|'extern'|'inline'|'register'|'static'|'typedef'|'virtual'|'mutable';
+
+IGNORESYMBOLS2 : 'do';
 
 CONSTANT: LETTERBIG(LETTERBIG|DIGIT)* | DIGIT+ | FLOAT ;
 
@@ -43,12 +44,14 @@ FLOAT: DIGIT+ '.' DIGIT* // match 1. 39. 3.14159 etc...
 | '-' DIGIT+ '.' DIGIT* 
 ;
 
+STRING : '"' .*? '"' | '\'' .*? '\'' ;
 INT : DIGIT+;				// match 1 or more digits
 LINE_COMMENT : '//' ~[\r\n]* -> skip;
 COMMENT : '/*' .*? '*/' -> skip;
 INCLUDE: ('#INCLUDE'.*? '\n' | '#include'.*? '\n') -> skip;
 ALOTOFWHITESPACE: (WHITESPACE+) -> skip;
-IGNORESYMBOLS: ('}' |')'| ']' | ':' | 'do'| '"' |  '\\' |['] ) -> skip;
+IGNORESYMBOLS: ('}' |')'| ']' | ':' | '\\' |['] ) -> skip;
+
 
 fragment DIGIT : [0-9] ;	// match 1 digit
 fragment LETTER: [a-zA-Z_];
