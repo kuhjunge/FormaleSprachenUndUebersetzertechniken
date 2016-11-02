@@ -4,48 +4,44 @@ import collections.list.Multiset;
 
 public class Halstead<E extends Comparable<E>> {
 	private Multiset<E> operands, operator;
-	double N1;
-	double N2;
-	double n1;
-	double n2;
-	double N;
-	double n;
-	double V;
-	double D;
-	double E;
+	private HalsteadData data = new HalsteadData();
 
 	public Halstead(Multiset<E> tor, Multiset<E> nds) {
 		this.operands = nds;
 		this.operator = tor;
-		this.N1 = this.operator.size();
-		this.N2 = this.operands.size();
-		this.n1 = this.operator.distinct();
-		this.n2 = this.operands.distinct();
-		this.N = this.N1 + this.N2;
-		this.n = this.n1 + this.n2;
-		this.V = this.N * (Math.log(this.n) / Math.log(2));
-		this.D = ((int) this.n1 / 2) * ((int) this.N2 / (int) this.n2); // Int Cast ist notwendig um
+		this.data.N1 = this.operator.size();
+		this.data.N2 = this.operands.size();
+		this.data.n1 = this.operator.distinct();
+		this.data.n2 = this.operands.distinct();
+		this.data.N = this.data.N1 + this.data.N2;
+		this.data.n = this.data.n1 + this.data.n2;
+		this.data.V = this.data.N * (Math.log(this.data.n) / Math.log(2));
+		this.data.D = ((int) this.data.n1 / 2) * ((int) this.data.N2 / (int) this.data.n2); // Int Cast ist notwendig um
 													// die richtigen Zahlen zu
 													// bekommen
-		this.E = this.V * this.D;
+		this.data.E = this.data.V * this.data.D;
+	}
+	
+	public HalsteadData getData(){
+		return this.data;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder ret = new StringBuilder();
-		ret.append("N Programmlänge: " + this.N + "\r\n");
-		ret.append("  Ges Operator " + this.N1+ "\r\n"); // N1
-		ret.append("  Ges Operanten: " + this.N2+ "\r\n"); // N2
-		ret.append("n Vokabulargröße: " + this.n+ "\r\n");
-		ret.append("  Dis Operator: " + this.n1+ "\r\n"); // n1
-		ret.append("  Dis Operanten: " + this.n2+ "\r\n"); // n2
-		ret.append("V Volumen des Programms: " + this.V+ "\r\n"); // Funktion 20 -
+		ret.append("N Programmlänge: " + this.data.N + "\r\n");
+		ret.append("  Ges Operator " + this.data.N1+ "\r\n"); // N1
+		ret.append("  Ges Operanten: " + this.data.N2+ "\r\n"); // N2
+		ret.append("n Vokabulargröße: " + this.data.n+ "\r\n");
+		ret.append("  Dis Operator: " + this.data.n1+ "\r\n"); // n1
+		ret.append("  Dis Operanten: " + this.data.n2+ "\r\n"); // n2
+		ret.append("V Volumen des Programms: " + this.data.V+ "\r\n"); // Funktion 20 -
 														// 1000 | Datei
 														// 100 - 8000
-		ret.append("D Schwierigkeitsgrad: " + this.D + "\r\n");
-		ret.append("L Programmniveau: " + (1 / this.D)+ "\r\n");
-		ret.append("E Implementierungsaufwand: " + this.E+ "\r\n");
-		ret.append("T Implementierungszeit: " + (this.E / 18)+ "\r\n");
+		ret.append("D Schwierigkeitsgrad: " + this.data.D + "\r\n");
+		ret.append("L Programmniveau: " + (1 / this.data.D)+ "\r\n");
+		ret.append("E Implementierungsaufwand: " + this.data.E+ "\r\n");
+		ret.append("T Implementierungszeit: " + (this.data.E / 18)+ "\r\n");
 		return ret.toString();
 	}
 

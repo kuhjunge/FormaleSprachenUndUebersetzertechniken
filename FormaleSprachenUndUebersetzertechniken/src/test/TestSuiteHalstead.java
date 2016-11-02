@@ -1,126 +1,67 @@
 package test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import org.antlr.v4.runtime.*;
 import org.junit.Test;
 
-import collections.list.*;
 import halstead.*;
-import muell.HalsteadLexer;
-import halstead.lexer.*;
-
-
 import static org.junit.Assert.*;
 
 public class TestSuiteHalstead {
+	final String pfad = "C:\\Users\\Kuhjunge\\Documents\\Kuhjunge\\Documents\\Study\\_archive\\Inf II\\Praktika\\Halstead mit LinkedListMultiset\\";
+	final Double[] ggt1 = {30.0, 15.0, 15.0, 15.0, 11.0, 4.0, 117.20671786825557,15.0, 1758.1007680238336};
+	final Double[] ggt2 = {35.0,17.0,18.0,15.0,9.0,6.0,136.74117084629816,12.0,1640.894050155578};
+	final Double[] Beispiel2 = {390.0,213.0,177.0,68.0,25.0,43.0,2374.1105080876328,48.0,113957.30438820636};
+	final Double[] main = {39.0,20.0,19.0,22.0,10.0,12.0,173.9178331268546,5.0,869.589165634273};
+	final Double[] eval1 = {279.0,157.0,122.0,52.0,22.0,30.0,1590.4226813613648,44.0,69978.59797990005};
+	final Double[] extract = {55.0,29.0,26.0,21.0,10.0,11.0,241.57745825283183,10.0,2415.774582528318};
 	
-	public static void halsteadOld(String file, String name) {
-		System.out.println();
-		System.out.println("Test " + name);
-		halsteadOld(file);
-	}
-	
-	public static void halstead(String file, String name) {
-		System.out.println();
-		System.out.println("Test " + name);
-		halstead(file);
-	}
-
-	public static void halsteadOld(String file){
-		Multiset<String> listOperator = new LinkedListMultiset<>(
-				LinkedList.FRONT);
-		Multiset<String> listOperant = new LinkedListMultiset<>(
-				LinkedList.FRONT);
-		org.antlr.runtime.CharStream input = null;
-		File bla = new File(file);
-		try( FileInputStream str = new FileInputStream(bla) ){
-		System.setIn(str);
-		input = new org.antlr.runtime.ANTLRInputStream(System.in);
-		HalsteadLexer lex = new HalsteadLexer(input);
-		org.antlr.runtime.Token t = lex.nextToken();
-		while (t == null || t.getType() != HalsteadLexer.EOF) {// Token.EOF
-			if (t.getType() == HalsteadLexer.OPERATOR) {
-				listOperator.add(t.getText());
-			}
-			if (t.getType() == HalsteadLexer.OPERAND) {
-				listOperant.add(t.getText());
-			}
-			t = lex.nextToken();
-		}
-		System.out.println(listOperator + "  :: " + listOperator.size());
-		System.out.println(listOperant + "  :: " + listOperant.size());
-		Halstead<String> h = new Halstead<>(listOperator,listOperant);
-		System.out.println(h);
-		} catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
-	public static void halstead(String file){
-		Multiset<String> listOperator = new LinkedListMultiset<>(
-				LinkedList.FRONT);
-		Multiset<String> listOperant = new LinkedListMultiset<>(
-				LinkedList.FRONT);
-		CharStream input = null;
-		File bla = new File(file);
-		try( FileInputStream str = new FileInputStream(bla) ){
-		System.setIn(str);
-		input = new ANTLRInputStream(System.in);
-		CLexer lex = new CLexer(input);
-		Token t = lex.nextToken();
-		while (t == null || t.getType() != CLexer.EOF) {// Token.EOF
-			if (t.getType() == CLexer.OPERATOR) {
-				listOperator.add(t.getText());
-			}
-			if (t.getType() == CLexer.OPERAND) {
-				listOperant.add(t.getText());
-			}
-			t = lex.nextToken();
-		}
-		System.out.println(listOperator + "  :: " + listOperator.size());
-		System.out.println(listOperant + "  :: " + listOperant.size());
-		Halstead<String> h = new Halstead<>(listOperator,listOperant);
-		System.out.println(h);
-		} catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-
 	@Test
-	public void testOld() {
-		try {
-			final String pfad = "C:\\Users\\Kuhjunge\\Documents\\Kuhjunge\\Documents\\Study\\_archive\\Inf II\\Praktika\\Halstead mit LinkedListMultiset\\";
-			halsteadOld(pfad + "ggt1.c", "ggt1");
-			halsteadOld(pfad + "ggt2.c", "ggt2");
-			halsteadOld(pfad + "Beispiel2.c", "Beispiel2");
-			halsteadOld(pfad + "main.c", "main");
-			halsteadOld(pfad + "eval1.c", "eval1");
-			halsteadOld(pfad + "extract.c", "extract");
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("Fehler!");
-		}
+	public void ggt1(){
+		runHalstead("ggt1.c", this.ggt1);
 	}
 	
 	@Test
-	public void test() {
-		try {
-			final String pfad = "C:\\Users\\Kuhjunge\\Documents\\Kuhjunge\\Documents\\Study\\_archive\\Inf II\\Praktika\\Halstead mit LinkedListMultiset\\";
-			halstead(pfad + "ggt1.c", "ggt1");
-			halstead(pfad + "ggt2.c", "ggt2");
-			halstead(pfad + "Beispiel2.c", "Beispiel2");
-			halstead(pfad + "main.c", "main");
-			halstead(pfad + "eval1.c", "eval1");
-			halstead(pfad + "extract.c", "extract");
+	public void ggt2(){
+		runHalstead("ggt2.c", this.ggt2);
+	}
+	
+	@Test
+	public void beispiel2(){
+		runHalstead("Beispiel2.c", this.Beispiel2);
+	}
+	
+	@Test
+	public void maintest(){
+		runHalstead("main.c", this.main);
+	}
+	
+	@Test
+	public void eval1(){
+		runHalstead("eval1.c", this.eval1);
+	}
+	
+	@Test
+	public void extract(){
+		runHalstead("extract.c", this.extract);
+	}
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			fail("Fehler!");
+	public void runHalstead(String file, Double[] arr) {
+		HalsteadData hd = HalsteadRunner.halstead(this.pfad + file);
+		if (hd == null) {
+			fail("Keine Auswertung stattgefunden, IO Fehler?");
+		} else {
+			checkHalstead(hd, arr);
 		}
+	}
+	
+	private static void checkHalstead(HalsteadData hd, Double[] data) {
+		assertTrue(hd.N == data[0]);
+		assertTrue(hd.N1 == data[1]);
+		assertTrue(hd.N2 == data[2]);
+		assertTrue(hd.n == data[3]);
+		assertTrue(hd.n1 == data[4]);
+		assertTrue(hd.n2 == data[5]);
+		assertTrue(hd.V == data[6]);
+		assertTrue(hd.D == data[7]);
+		assertTrue(hd.E == data[8]);
 	}
 }
