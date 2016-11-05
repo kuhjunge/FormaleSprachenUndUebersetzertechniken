@@ -14,7 +14,6 @@ OPERATOR:  RESERVED | TYPE_QUAL | SCSPEC | OPERATORS;
 IGNORE: IGNORESYMBOLS2 | INCLUDE |  ALOTOFWHITESPACE | COMMENT | LINE_COMMENT | IGNORESYMBOLS;
 OPERAND:  TYPESPEC | IDENTIFIER | INT | FLOAT | STRING | CONSTANT;
 
-
 RESERVED : 'if' WHITESPACE* '(' | 'if' | 'asm' | 'break'|
 'case'| 'class'| 'continue'| 'default'| 'delete'| 'while' WHITESPACE* '('| 'else'| 'enum' | 'for' WHITESPACE* '(' |
 'goto'|  'new'| 'operator'| 'private'| 'protected'| 'public'| 'return'|
@@ -51,7 +50,6 @@ COMMENT : '/*' .*? '*/' -> skip;
 INCLUDE: ('#INCLUDE'.*? '\n' | '#include'.*? '\n') -> skip;
 ALOTOFWHITESPACE: (WHITESPACE+) -> skip;
 IGNORESYMBOLS: ('}' |')'| ']' | ':' | '\\' |['] ) -> skip;
-
 
 fragment DIGIT : [0-9] ;	// match 1 digit
 fragment LETTER: [a-zA-Z_];
