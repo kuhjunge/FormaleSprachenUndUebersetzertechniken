@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="85" started-at="2016-11-08T12:21:04Z" finished-at="2016-11-08T12:21:04Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="85" started-at="2016-11-08T12:21:04Z" finished-at="2016-11-08T12:21:04Z">
+      <class name="test.TestNGHalstead">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="43" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@1a8a8f7c]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\ggt1.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@2353b3e6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\ggt2.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="11" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@631330c]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\Beispiel2.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@42f93a98]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\main.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="4" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@c46bcd4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\eval1.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Double;@3234e239]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C:\Users\Kuhjunge\Documents\Kuhjunge\Documents\Study\_archive\Inf II\Praktika\Halstead mit LinkedListMultiset\extract.c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- test.TestNGHalstead -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

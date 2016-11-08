@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 public class TestSuiteHalstead {
 	final String pfad = "C:\\Users\\Kuhjunge\\Documents\\Kuhjunge\\Documents\\Study\\_archive\\Inf II\\Praktika\\Halstead mit LinkedListMultiset\\";
+
 	final Double[] ggt1 = {30.0, 15.0, 15.0, 15.0, 11.0, 4.0, 117.20671786825557,15.0, 1758.1007680238336};
 	final Double[] ggt2 = {35.0,17.0,18.0,15.0,9.0,6.0,136.74117084629816,12.0,1640.894050155578};
 	final Double[] Beispiel2 = {390.0,213.0,177.0,68.0,25.0,43.0,2374.1105080876328,48.0,113957.30438820636};
