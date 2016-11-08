@@ -11,47 +11,39 @@ r  : allTokens+ ;        	// match keyword hello followed by an identifier
 allTokens: OPERATOR | OPERAND | IGNORE;
 
 OPERATOR:  RESERVED | TYPE_QUAL | SCSPEC | OPERATORS;
-IGNORE: IGNORESYMBOLS2 | INCLUDE |  ALOTOFWHITESPACE | COMMENT | LINE_COMMENT | IGNORESYMBOLS;
-OPERAND:  TYPESPEC | IDENTIFIER | INT | FLOAT | STRING | CONSTANT;
+IGNORE: (COMMENT | LINE_COMMENT | IGNORESYMBOLS2 | IGNORESYMBOLS | INCLUDE | ALOTOFWHITESPACE )
+	 -> skip;
+OPERAND:  TYPESPEC | IDENTIFIER | INT | FLOAT | CONSTANT | STRING ;
 
-RESERVED : 'if' WHITESPACE* '(' | 'if' | 'asm' | 'break'|
-'case'| 'class'| 'continue'| 'default'| 'delete'| 'while' WHITESPACE* '('| 'else'| 'enum' | 'for' WHITESPACE* '(' |
-'goto'|  'new'| 'operator'| 'private'| 'protected'| 'public'| 'return'|
-'sizeof'| 'struct'| 'switch' WHITESPACE* '('| 'this'| 'union'|'namespace'| 'using'| 'try'| 'catch'|
-'throw'| 'const_cast'| 'static_cast'| 'dynamic_cast'| 'reiznterpret_cast'|
-'typeid'| 'template'| 'explicit'| 'true'| 'false'| 'typename' ;
+fragment RESERVED : 'if' WHITESPACE* '(' | 'if' | 'asm' | 'break'|
+ 'case'| 'class'| 'continue'| 'default'| 'delete'| 'while' WHITESPACE* '('| 'else'|
+ 'enum' | 'for' WHITESPACE* '(' | 'goto'|  'new'| 'operator'| 'private'| 'protected'|
+ 'public'| 'return'|'sizeof'| 'struct'| 'switch' WHITESPACE* '('| 'this'| 'union'|
+ 'namespace'| 'using'| 'try'| 'catch'|'throw'| 'const_cast'| 'static_cast'|
+ 'dynamic_cast'| 'reiznterpret_cast'|'typeid'| 'template'| 'explicit'| 'true'|
+ 'false'| 'typename';
 
-OPERATORS : '!'|'!='|'%'|'%='|'&'|'&&'|'&='|'*'|'*='
-|'+'|'++'|'+='|','|'-'|'--'|'-='|'->'|'...'|'/'
-|'/='|'::'|'<'|'<<'|'<<='|'<='|'=='|'>'|'>='|'>>'
-|'>>='|'?'|'['|'^'|'^='|'{'|'||'|'='|'~'|';' | '(' ;
+fragment OPERATORS :  '!'|'!='|'%'|'%='|'&'|'&&'|'&='|'*'|'*='|'+'|'++'|'+='|','|'-'|
+ '--'|'-='|'->'|'...'|'/'|'/='|'::'|'<'|'<<'|'<<='|'<='|'=='|'>'|'>='|'>>'|'>>='|'?'|
+ '['|'^'|'^='|'{'|'||'|'='|'~'|';' | '(' ;
 
-TYPE_QUAL: 'const'|'friend'|'volatile';
+fragment TYPE_QUAL: 'const'|'friend'|'volatile';
+fragment SCSPEC : 'auto'|'extern'|'inline'|'register'|'static'|'typedef'|'virtual'|'mutable';
+fragment IGNORESYMBOLS2 : 'do';
+fragment CONSTANT: LETTERBIG(LETTERBIG|DIGIT)* | DIGIT+ | FLOAT ;
+fragment TYPESPEC: 'bool'|'char'|'double'|'folat'|'int'|'ong'|'short'|'signed'|'unsigned'|'void';
+fragment IDENTIFIER: LETTER(LETTER|DIGIT)*;
+fragment FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+ | '-' DIGIT+ '.' DIGIT* ;
 
-SCSPEC : 'auto'|'extern'|'inline'|'register'|'static'|'typedef'|'virtual'|'mutable';
+fragment STRING : '"' .*? '"' | '\'' .*? '\'' ;
+fragment INT : DIGIT+;
+fragment LINE_COMMENT : '//' ~[\r\n]*;
+fragment COMMENT : '/*' .*? '*/';
+fragment INCLUDE: ('#INCLUDE'.*? '\n' | '#include'.*? '\n');
+fragment ALOTOFWHITESPACE: (WHITESPACE+);
+fragment IGNORESYMBOLS: ('}' |')'| ']' | ':' | '\\' |['] );
 
-IGNORESYMBOLS2 : 'do';
-
-CONSTANT: LETTERBIG(LETTERBIG|DIGIT)* | DIGIT+ | FLOAT ;
-
-TYPESPEC: 'bool'|'char'|'double'|'folat'|'int'|'ong'|'short'|'signed'|'unsigned'|'void';
-
-IDENTIFIER: LETTER(LETTER|DIGIT)*;
-
-FLOAT: DIGIT+ '.' DIGIT* // match 1. 39. 3.14159 etc...
-| '.' DIGIT+ // match .1 .14159
-| '-' DIGIT+ '.' DIGIT* 
-;
-
-STRING : '"' .*? '"' | '\'' .*? '\'' ;
-INT : DIGIT+;				// match 1 or more digits
-LINE_COMMENT : '//' ~[\r\n]* -> skip;
-COMMENT : '/*' .*? '*/' -> skip;
-INCLUDE: ('#INCLUDE'.*? '\n' | '#include'.*? '\n') -> skip;
-ALOTOFWHITESPACE: (WHITESPACE+) -> skip;
-IGNORESYMBOLS: ('}' |')'| ']' | ':' | '\\' |['] ) -> skip;
-
-fragment DIGIT : [0-9] ;	// match 1 digit
+fragment DIGIT : [0-9] ;
 fragment LETTER: [a-zA-Z_];
 fragment LETTERBIG: [A-Z_];
 fragment WHITESPACE : [ \t\r\n] ;

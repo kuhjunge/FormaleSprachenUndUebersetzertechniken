@@ -80,7 +80,7 @@ public class ExprRecogController extends Application {
 	}
 
 	private void evalInput() {
-		String input = (this.textAreaInput.getText()) + "";
+		String input = (this.textAreaInput.getText()) + "\n";
 		boolean b = ExprRecognizer.isValid(input);
 		this.textFieldResult.setText((b? ExprRecognizer.getTreeString(input): "Nicht gültiger Ausdruck"));
 	}

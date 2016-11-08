@@ -28,13 +28,25 @@ public class ExprRecogBaseListener implements ExprRecogListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAllTokens(ExprRecogParser.AllTokensContext ctx) { }
+	@Override public void enterStat(ExprRecogParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAllTokens(ExprRecogParser.AllTokensContext ctx) { }
+	@Override public void exitStat(ExprRecogParser.StatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpr(ExprRecogParser.ExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpr(ExprRecogParser.ExprContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.Token;
 
 import collections.list.LinkedList;
@@ -25,19 +26,19 @@ public class HalsteadRunner {
 			input = new ANTLRInputStream(System.in);
 			CLexer lex = new CLexer(input);
 			Token t = lex.nextToken();
-			while (t == null || t.getType() != CLexer.EOF) {// Token.EOF
-				if (t.getType() == CLexer.OPERATOR) {
+			while (t == null || t.getType() != Recognizer.EOF) {// Token.EOF
+				if (t != null && t.getType() == CLexer.OPERATOR) {
 					listOperator.add(t.getText());
 				}
-				if (t.getType() == CLexer.OPERAND) {
+				if (t != null && t.getType() == CLexer.OPERAND) {
 					listOperant.add(t.getText());
 				}
 				t = lex.nextToken();
 			}
-			System.out.println(listOperator + "  :: " + listOperator.size());
-			System.out.println(listOperant + "  :: " + listOperant.size());
+//			System.out.println(listOperator + "  :: " + listOperator.size());
+//			System.out.println(listOperant + "  :: " + listOperant.size());
 			Halstead<String> h = new Halstead<>(listOperator, listOperant);
-			System.out.println(h);
+//			System.out.println(h);
 			return h.getData();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,18 +57,18 @@ public class HalsteadRunner {
 			HalsteadLexer lex = new HalsteadLexer(input);
 			org.antlr.runtime.Token t = lex.nextToken();
 			while (t == null || t.getType() != HalsteadLexer.EOF) {// Token.EOF
-				if (t.getType() == HalsteadLexer.OPERATOR) {
+				if (t != null && t.getType() == HalsteadLexer.OPERATOR) {
 					listOperator.add(t.getText());
 				}
-				if (t.getType() == HalsteadLexer.OPERAND) {
+				if (t != null && t.getType() == HalsteadLexer.OPERAND) {
 					listOperant.add(t.getText());
 				}
 				t = lex.nextToken();
 			}
-			System.out.println(listOperator + "  :: " + listOperator.size());
-			System.out.println(listOperant + "  :: " + listOperant.size());
+//			System.out.println(listOperator + "  :: " + listOperator.size());
+//			System.out.println(listOperant + "  :: " + listOperant.size());
 			Halstead<String> h = new Halstead<>(listOperator, listOperant);
-			System.out.println(h);
+//			System.out.println(h);
 			return h.getData();
 		} catch (Exception e) {
 			e.printStackTrace();

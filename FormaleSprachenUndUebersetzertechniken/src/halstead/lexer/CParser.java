@@ -17,10 +17,7 @@ public class CParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		OPERATOR=1, IGNORE=2, OPERAND=3, RESERVED=4, OPERATORS=5, TYPE_QUAL=6, 
-		SCSPEC=7, IGNORESYMBOLS2=8, CONSTANT=9, TYPESPEC=10, IDENTIFIER=11, FLOAT=12, 
-		STRING=13, INT=14, LINE_COMMENT=15, COMMENT=16, INCLUDE=17, ALOTOFWHITESPACE=18, 
-		IGNORESYMBOLS=19;
+		OPERATOR=1, IGNORE=2, OPERAND=3;
 	public static final int
 		RULE_r = 0, RULE_allTokens = 1;
 	public static final String[] ruleNames = {
@@ -28,13 +25,9 @@ public class CParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, null, null, null, null, null, null, null, "'do'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "OPERATOR", "IGNORE", "OPERAND", "RESERVED", "OPERATORS", "TYPE_QUAL", 
-		"SCSPEC", "IGNORESYMBOLS2", "CONSTANT", "TYPESPEC", "IDENTIFIER", "FLOAT", 
-		"STRING", "INT", "LINE_COMMENT", "COMMENT", "INCLUDE", "ALOTOFWHITESPACE", 
-		"IGNORESYMBOLS"
+		null, "OPERATOR", "IGNORE", "OPERAND"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -186,7 +179,7 @@ public class CParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\25\16\4\2\t\2\4\3"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\5\16\4\2\t\2\4\3"+
 		"\t\3\3\2\6\2\b\n\2\r\2\16\2\t\3\3\3\3\3\3\2\2\4\2\4\2\3\3\2\3\5\f\2\7"+
 		"\3\2\2\2\4\13\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t\3\2\2\2\t\7\3\2\2\2"+
 		"\t\n\3\2\2\2\n\3\3\2\2\2\13\f\t\2\2\2\f\5\3\2\2\2\3\t";

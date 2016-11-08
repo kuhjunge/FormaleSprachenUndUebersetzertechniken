@@ -1,11 +1,21 @@
 grammar ExprRecog;
-r  : allTokens+ ;
-allTokens: IGNORE;
+/** The start rule; begin parsing here. */
+r  : stat+;
+stat: expr NEWLINE
+| ID '=' expr NEWLINE
+| NEWLINE
+;
+expr:<assoc=right> expr '^' expr  // ^ operator is right associative
+| expr ('*'|'/') expr // match subexpressions joined with '*' operator
+| expr ('+'|'-') expr // match subexpressions joined with '+' operator
+| expr ('<'|'>') expr
+| expr ('=') expr
+| INT
+| ID
+| '(' expr ')'
+;
 
-NL: [\n];  
-IGNORE: ( WHITESPACE+ ) -> skip;  
-
-fragment DIGIT : [0-9];	// match 1 digit
-fragment LETTER: [a-zA-Z_];
-fragment LETTERBIG: [A-Z_];
-fragment WHITESPACE : [ \t\r];
+ID : [a-zA-Z]+ ; // match identifiers
+INT : [0-9]+ ; // match integers
+NEWLINE:'\r'? '\n' ; // return newlines to parser (end-statement signal)
+WS : [ \t]+ -> skip ; // toss out whitespace

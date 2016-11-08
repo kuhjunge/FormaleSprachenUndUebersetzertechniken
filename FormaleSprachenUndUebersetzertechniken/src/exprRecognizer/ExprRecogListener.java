@@ -18,13 +18,23 @@ public interface ExprRecogListener extends ParseTreeListener {
 	 */
 	void exitR(ExprRecogParser.RContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprRecogParser#allTokens}.
+	 * Enter a parse tree produced by {@link ExprRecogParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void enterAllTokens(ExprRecogParser.AllTokensContext ctx);
+	void enterStat(ExprRecogParser.StatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprRecogParser#allTokens}.
+	 * Exit a parse tree produced by {@link ExprRecogParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void exitAllTokens(ExprRecogParser.AllTokensContext ctx);
+	void exitStat(ExprRecogParser.StatContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExprRecogParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpr(ExprRecogParser.ExprContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExprRecogParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpr(ExprRecogParser.ExprContext ctx);
 }
