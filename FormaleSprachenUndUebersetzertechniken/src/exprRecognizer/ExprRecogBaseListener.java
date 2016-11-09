@@ -16,18 +16,6 @@ public class ExprRecogBaseListener implements ExprRecogListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterR(ExprRecogParser.RContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitR(ExprRecogParser.RContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterStat(ExprRecogParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -8,16 +8,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface ExprRecogListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link ExprRecogParser#r}.
-	 * @param ctx the parse tree
-	 */
-	void enterR(ExprRecogParser.RContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ExprRecogParser#r}.
-	 * @param ctx the parse tree
-	 */
-	void exitR(ExprRecogParser.RContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link ExprRecogParser#stat}.
 	 * @param ctx the parse tree
 	 */

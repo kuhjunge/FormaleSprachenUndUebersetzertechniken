@@ -1,6 +1,5 @@
 grammar ExprRecog;
 /** The start rule; begin parsing here. */
-r  : stat+;
 stat: expr NEWLINE
 | ID '=' expr NEWLINE
 | NEWLINE
