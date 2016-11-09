@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85" started-at="2016-11-08T12:21:04Z" finished-at="2016-11-08T12:21:04Z">
+  <suite name="Default suite" duration-ms="145" started-at="2016-11-09T15:34:36Z" finished-at="2016-11-09T15:34:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85" started-at="2016-11-08T12:21:04Z" finished-at="2016-11-08T12:21:04Z">
+    <test name="Default test" duration-ms="145" started-at="2016-11-09T15:34:36Z" finished-at="2016-11-09T15:34:36Z">
       <class name="test.TestNGHalstead">
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="43" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="94" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="5" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>
@@ -39,7 +39,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="11" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="11" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>
@@ -55,7 +55,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="4" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>
@@ -71,7 +71,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="4" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="4" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>
@@ -87,7 +87,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="2" started-at="2016-11-08T13:21:04Z" data-provider="dp" finished-at="2016-11-08T13:21:04Z">
+        <test-method status="PASS" signature="f([Ljava.lang.Double;, java.lang.String)[pri:0, instance:test.TestNGHalstead@7ac7a4e4]" name="f" duration-ms="4" started-at="2016-11-09T16:34:36Z" data-provider="dp" finished-at="2016-11-09T16:34:36Z">
           <params>
             <param index="0">
               <value>

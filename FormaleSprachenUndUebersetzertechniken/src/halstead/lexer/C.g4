@@ -1,14 +1,10 @@
 /**
  * Define a grammar called C 
- * Wihle und Do While erweiterung
- * JUNIT Test (JUNIT 5)
- * JUNIT Params Runner 
- * (TESTNG)
  */
-grammar C;
-r  : allTokens+ ;        	// match keyword hello followed by an identifier
+lexer grammar C;
+/*r  : allTokens+ ;        	// match keyword hello followed by an identifier
 
-allTokens: OPERATOR | OPERAND | IGNORE;
+allTokens: OPERATOR | OPERAND | IGNORE;*/
 
 OPERATOR:  RESERVED | TYPE_QUAL | SCSPEC | OPERATORS;
 IGNORE: (COMMENT | LINE_COMMENT | IGNORESYMBOLS2 | IGNORESYMBOLS | INCLUDE | ALOTOFWHITESPACE )
