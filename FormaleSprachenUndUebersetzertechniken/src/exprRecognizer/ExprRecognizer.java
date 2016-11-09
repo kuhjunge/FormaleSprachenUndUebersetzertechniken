@@ -2,23 +2,22 @@ package exprRecognizer;
 
 public class ExprRecognizer {
 
-	private static String oldExpr = "";
-	private static ExprDataCalculator data = null;
+	private ExprDataCalculator data = null;
 
-	private static void calc(String expr) {
-		if (oldExpr != expr){
-			data = new ExprDataCalculator(expr);
-		}
+	public ExprRecognizer(String expr) {
+		calc(expr);
 	}
 
-	public static String getTreeString(String expr) {
-		calc(expr);
-		return data.strRepresentation;
+	private void calc(String expr) {
+		this.data = new ExprDataCalculator(expr);
 	}
 
-	public static boolean isValid(String expr) {
-		calc(expr);
-		if (data.err != true) {
+	public String getTreeString() {
+		return this.data.strRepresentation;
+	}
+
+	public boolean isValid() {
+		if (this.data.err != true) {
 			return true;
 		}
 		return false;
