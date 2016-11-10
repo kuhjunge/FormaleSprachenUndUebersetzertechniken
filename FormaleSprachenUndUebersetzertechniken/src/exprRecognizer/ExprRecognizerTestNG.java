@@ -28,7 +28,8 @@ public class ExprRecognizerTestNG {
 			new Object[] { "b > a" + end			,true, 	"(expr (expr b) > (expr a))" },
 			new Object[] { "6 > 7 ^ 1 + 5" + end	,true, 	"(expr (expr 6) > (expr (expr (expr 7) ^ (expr 1)) + (expr 5)))" }, 
 			new Object[] { "10^10^10" + end			,true, 	"(expr (expr 10) ^ (expr (expr 10) ^ (expr 10)))" },
-			new Object[] { "10 + - 20" + end		,false,	" " } 	
+			new Object[] { "10 + - 20" + end		,false,	" " },
+			new Object[] { "10  20" + end		,false,	" " } 
 			};
 	}
 }
