@@ -19,7 +19,7 @@ public class Token {
 
 	@Override
 	public String toString() {
-		String tname = ListLexer.tokenNames[this.type];
+		String tname = RecursiveDecentLexer.tokenNames[this.type];
 		return "<'" + this.text + "'," + tname + ">";
 	}
 }

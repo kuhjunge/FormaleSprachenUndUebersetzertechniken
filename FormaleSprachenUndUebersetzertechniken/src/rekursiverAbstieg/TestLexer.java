@@ -10,7 +10,7 @@ package rekursiverAbstieg;
  ***/
 public class TestLexer {
 	public static void main(String[] args) {
-		ListLexer lexer = new ListLexer(args[0]);
+		Lexer lexer = new RecursiveDecentLexer("10 + 20 \n");
 		Token t = lexer.nextToken();
 		while (t.type != Lexer.EOF_TYPE) {
 			System.out.println(t);
