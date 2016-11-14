@@ -15,28 +15,28 @@ public class ListParser extends Parser {
 
 	/** list : '[' elements ']' ; // match bracketed list */
 	public void list() {
-		match(ListLexer.LBRACK);
+	//	match(ListLexer.LBRACK);
 		elements();
-		match(ListLexer.RBRACK);
+	//	match(ListLexer.RBRACK);
 	}
 
 	/** elements : element (',' element)* ; */
 	void elements() {
 		element();
-		while (this.lookahead.type == ListLexer.COMMA) {
+	/*	while (this.lookahead.type == ListLexer.COMMA) {
 			match(ListLexer.COMMA);
 			element();
-		}
+		}*/
 	}
 
 	/** element : name | list ; // element is name or nested list */
 	void element() {
-		if (this.lookahead.type == ListLexer.NAME) {
+	/*	if (this.lookahead.type == ListLexer.NAME) {
 			match(ListLexer.NAME);
 		} else if (this.lookahead.type == ListLexer.LBRACK) {
 			list();
 		} else {
 			throw new Error("expecting name or list; found " + this.lookahead);
-		}
+		} */
 	}
 }
