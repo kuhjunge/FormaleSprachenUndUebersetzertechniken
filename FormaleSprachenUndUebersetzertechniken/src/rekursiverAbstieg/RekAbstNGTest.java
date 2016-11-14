@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-public class LexerNGTest {
+public class RekAbstNGTest {
   @Test(dataProvider = "dpLexer")
-  public void f(String s, String comp) {
+  public void testLexer(String s, String comp) {
 		int i = 0;
 		Lexer lexer = new RecursiveDecentLexer(s);
 		Assert.assertNotNull(lexer);
@@ -23,6 +23,16 @@ public class LexerNGTest {
 		System.out.println(t); // EOF
   }
 
+  @Test
+  public void testParser() {
+		Lexer lexer = new RecursiveDecentLexer(" 5 + (10 - 23)\n");
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		Assert.assertNotNull(parser);
+		
+		parser.statlist();
+
+  }
+  
   @DataProvider
   public Object[][] dpLexer() {
 	final String end = "\n";
@@ -31,7 +41,7 @@ public class LexerNGTest {
       new Object[] {"10 - 20 " + end, "<'10',INTEGER>;<'-',MINUS>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
       new Object[] {"10 * 20 " + end, "<'10',INTEGER>;<'*',MULTI>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
       new Object[] {"10 / 20 " + end, "<'10',INTEGER>;<'/',DIV>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
-      new Object[] {"- 20 " + end, "<'-',MINUS>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
+      new Object[] {"- 20  " + end, "<'-',MINUS>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
       new Object[] {"+ 20 " + end, "<'+',PLUS>;<'20',INTEGER>;<'\\n',NL>;<'<EOF>',EOF>"},
       new Object[] {"(10 - 20) * 525 + A6D " + end, "<'(',LBRACK>;<'10',INTEGER>;<'-',MINUS>;<'20',INTEGER>;<')',RBRACK>;<'*',MULTI>;<'525',INTEGER>;<'+',PLUS>;<'A6D',ID>;<'\\n',NL>;<'<EOF>',EOF>"},
     };
