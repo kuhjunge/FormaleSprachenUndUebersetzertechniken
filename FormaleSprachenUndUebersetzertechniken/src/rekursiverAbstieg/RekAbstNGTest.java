@@ -5,6 +5,34 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 public class RekAbstNGTest {
+	
+  @Test(dataProvider = "dpParser")
+  public void testParser(String str) {
+		Lexer lexer = new RecursiveDecentLexer(str);
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		Assert.assertNotNull(parser);
+		
+		parser.statlist();
+  }
+	
+  @DataProvider
+  public Object[][] dpParser() {
+	final String end = "\n";
+    return new Object[][] {
+      new Object[] {"10 + 20 " + end},
+      new Object[] {"10 - 20 " + end},
+      new Object[] {"10 * 20 " + end},
+      new Object[] {"10 / 20 " + end},
+      new Object[] {"- 20  " + end},
+      new Object[] {"+ 20 " + end},
+      new Object[] {"5 + (10 - 23)" + end},
+      new Object[] {"(10 - 23)" + end},
+      new Object[] {"1 + 2 + 3" + end},
+      new Object[] {"		 20 	 " + end},
+      new Object[] {"(10 - 20) * 525 " + end}
+    };
+  } 
+  
   @Test(dataProvider = "dpLexer")
   public void testLexer(String s, String comp) {
 		int i = 0;
@@ -21,16 +49,6 @@ public class RekAbstNGTest {
 			Assert.assertEquals(t.toString(), erg[i]);
 		}
 		System.out.println(t); // EOF
-  }
-
-  @Test
-  public void testParser() {
-		Lexer lexer = new RecursiveDecentLexer(" 5 + (10 - 23)\n");
-		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
-		Assert.assertNotNull(parser);
-		
-		parser.statlist();
-
   }
   
   @DataProvider

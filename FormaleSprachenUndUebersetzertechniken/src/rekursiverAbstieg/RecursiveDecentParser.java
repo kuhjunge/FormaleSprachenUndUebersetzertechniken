@@ -61,7 +61,7 @@ public class RecursiveDecentParser extends Parser {
 			term();
 		} else if (this.lookahead.type == LBRACK) {
 			match(LBRACK);
-			term();
+			sum();
 			match(RBRACK);
 		} else if (this.lookahead.type == INTEGER) {
 			match(INTEGER);
