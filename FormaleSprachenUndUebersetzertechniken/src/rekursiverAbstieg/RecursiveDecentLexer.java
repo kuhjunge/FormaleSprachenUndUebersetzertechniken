@@ -7,14 +7,15 @@ package rekursiverAbstieg;
  */
 public class RecursiveDecentLexer extends Lexer {
 
-	public static int INTEGER = 2;
-	public static int PLUS = 3;
-	public static int MINUS = 4;
-	public static int MULTI = 5;
-	public static int DIV = 6;
-	public static int LBRACK = 7;
-	public static int RBRACK = 8;
-	public static int NL = 9;
+	public static final int INTEGER = 2;
+	public static final int PLUS = 3;
+	public static final int MINUS = 4;
+	public static final int MULTI = 5;
+	public static final int DIV = 6;
+	public static final int LBRACK = 7;
+	public static final int RBRACK = 8;
+	public static final int NL = 9;
+	public static final int UMINUS = 10;
 
 	public static String[] tokenNames = { "e/a", "EOF", "INTEGER", "PLUS", "MINUS", "MULTI", "DIV", "LBRACK",
 			"RBRACK", "NL" };
@@ -67,6 +68,9 @@ public class RecursiveDecentLexer extends Lexer {
 			case ')':
 				consume();
 				return new Token(RBRACK, ")");
+			case '#':
+				consume();
+				return new Token(UMINUS, "#");
 			case '\n':
 				consume();
 				return new Token(NL, "\\n");

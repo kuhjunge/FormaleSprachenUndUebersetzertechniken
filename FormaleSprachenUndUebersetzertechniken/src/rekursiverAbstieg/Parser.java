@@ -9,8 +9,8 @@ package rekursiverAbstieg;
  * information.
  ***/
 public abstract class Parser {
-	Lexer input; // from where do we get tokens?
-	Token lookahead; // the current lookahead token
+	private Lexer input; // from where do we get tokens?
+	protected Token lookahead; // the current lookahead token
 
 	public Parser(Lexer input) {
 		this.input = input;

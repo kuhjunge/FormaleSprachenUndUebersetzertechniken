@@ -47,8 +47,9 @@ public class RekAbstNGTest {
 	@DataProvider
 	public Object[][] dpParser() {
 		return new Object[][] { 
-			new Object[] { "10 + 20 " + this.end },
 			new Object[] { "10 - 20 " + this.end },
+			new Object[] { "10 + 20 " + this.end },
+			new Object[] { "10 - 22 " + this.end },
 			new Object[] { "10 * 20 " + this.end },
 			new Object[] { "10 / 20 " + this.end },
 			new Object[] { "- 20  " + this.end },
@@ -57,7 +58,14 @@ public class RekAbstNGTest {
 			new Object[] { "(10 - 23)" + this.end },
 			new Object[] { "1 + 2 + 3" + this.end },
 			new Object[] { "		 20 	 " + this.end },
-			new Object[] { "(10 - 20) * 525" + this.end } };
+			new Object[] { "(10 - 20) * 525" + this.end }, 
+			new Object[] { " 3 + 4 * 5" + this.end},
+			new Object[] { " ( 3 + 4 ) * 5" + this.end},
+			new Object[] { " 1 + 2  + (5 * 4) + 5" + this.end},
+			new Object[] { " 5 / 4" + this.end},
+			new Object[] { " 1 + 2 + 3" + this.end}, 
+		};	
+		
 	}
 
 	@Test(dataProvider = "dpLexer")
