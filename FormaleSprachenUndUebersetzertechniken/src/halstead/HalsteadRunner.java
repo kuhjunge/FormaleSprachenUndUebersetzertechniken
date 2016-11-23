@@ -11,8 +11,7 @@ import org.antlr.v4.runtime.Token;
 import collections.list.LinkedList;
 import collections.list.LinkedListMultiset;
 import collections.list.Multiset;
-import halstead.lexer.CLexer;
-import muell.HalsteadLexer;
+import halstead.lexer.*;
 
 public class HalsteadRunner {
 
@@ -31,36 +30,6 @@ public class HalsteadRunner {
 					listOperator.add(t.getText());
 				}
 				if (t != null && t.getType() == CLexer.OPERAND) {
-					listOperant.add(t.getText());
-				}
-				t = lex.nextToken();
-			}
-//			System.out.println(listOperator + "  :: " + listOperator.size());
-//			System.out.println(listOperant + "  :: " + listOperant.size());
-			Halstead<String> h = new Halstead<>(listOperator, listOperant);
-//			System.out.println(h);
-			return h.getData();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static HalsteadData halsteadOld(String file) {
-		Multiset<String> listOperator = new LinkedListMultiset<>(LinkedList.FRONT);
-		Multiset<String> listOperant = new LinkedListMultiset<>(LinkedList.FRONT);
-		org.antlr.runtime.CharStream input = null;
-		File bla = new File(file);
-		try (FileInputStream str = new FileInputStream(bla)) {
-			System.setIn(str);
-			input = new org.antlr.runtime.ANTLRInputStream(System.in);
-			HalsteadLexer lex = new HalsteadLexer(input);
-			org.antlr.runtime.Token t = lex.nextToken();
-			while (t == null || t.getType() != HalsteadLexer.EOF) {// Token.EOF
-				if (t != null && t.getType() == HalsteadLexer.OPERATOR) {
-					listOperator.add(t.getText());
-				}
-				if (t != null && t.getType() == HalsteadLexer.OPERAND) {
 					listOperant.add(t.getText());
 				}
 				t = lex.nextToken();

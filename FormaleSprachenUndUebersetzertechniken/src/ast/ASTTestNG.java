@@ -2,7 +2,7 @@ package ast;
 
 import org.testng.annotations.Test;
 
-import ast.ImplParser.RecursiveDecentParser;
+import ast.implParser.RecursiveDecentParser;
 import rekursiverAbstieg.Lexer;
 import rekursiverAbstieg.RecursiveDecentLexer;
 

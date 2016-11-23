@@ -1,4 +1,4 @@
-package ast.ImplParser;
+package ast.implParser;
 
 import static rekursiverAbstieg.RecursiveDecentLexer.*;
 
