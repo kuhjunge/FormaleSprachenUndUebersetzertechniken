@@ -1,4 +1,4 @@
-package test;
+package halstead;
 
 import org.junit.Test;
 

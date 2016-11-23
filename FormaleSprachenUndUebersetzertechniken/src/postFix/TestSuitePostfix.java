@@ -1,8 +1,8 @@
-package test;
+package postFix;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import postFix.Postfix;
+
 import postFix.Exception.PostFixExpressionException;
 
 public class TestSuitePostfix {

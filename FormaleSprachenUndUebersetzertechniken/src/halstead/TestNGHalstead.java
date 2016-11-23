@@ -1,10 +1,7 @@
-package test;
+package halstead;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import halstead.HalsteadData;
-import halstead.HalsteadRunner;
-
 import org.testng.annotations.DataProvider;
 
 /**
