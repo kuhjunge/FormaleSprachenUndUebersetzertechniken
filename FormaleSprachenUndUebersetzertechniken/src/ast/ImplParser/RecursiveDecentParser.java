@@ -103,9 +103,9 @@ public class RecursiveDecentParser extends Parser {
 		if (this.root == null) {
 			this.root = node;
 		}
-
 		left = term();
 		while (this.lookahead.type == MULTI || this.lookahead.type == DIV) {
+			token = this.lookahead;
 			if (this.lookahead.type == MULTI) {
 				if (right != null) {
 					if (localRoot == null) {

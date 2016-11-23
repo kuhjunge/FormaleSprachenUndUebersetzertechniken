@@ -28,7 +28,8 @@ public abstract class HeteroAST { // Heterogeneous AST node type
 	/** Compute string for single node */
 	@Override
 	public String toString() {
-		return this.token.toString();
+		// return this.token.toString();
+		return this.token.text;
 	}
 
 	/** Compute string for a whole tree not just node; default: print token */
