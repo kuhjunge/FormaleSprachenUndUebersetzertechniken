@@ -10,8 +10,8 @@ import rekursiverAbstieg.Token;
  * Visit http://www.pragmaticprogrammer.com/titles/tpdsl for more book
  * information.
  ***/
-public class IntNode extends ExprNode {
-	public IntNode(Token t) {
+public class Int extends ExprNode {
+	public Int(Token t) {
 		super(t);
 	}
 }

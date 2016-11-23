@@ -2,10 +2,10 @@ package ast;
 
 import rekursiverAbstieg.Token;
 
-public class BinaryNode extends ExprNode {
+public class Binary extends ExprNode {
 	ExprNode left, right; // named, node-specific, irregular children
 
-	public BinaryNode(ExprNode left, Token addToken, ExprNode right) {
+	public Binary(ExprNode left, Token addToken, ExprNode right) {
 		super(addToken);
 		this.left = left;
 		this.right = right;
