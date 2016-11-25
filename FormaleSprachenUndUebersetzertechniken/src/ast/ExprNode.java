@@ -1,5 +1,6 @@
 package ast;
 
+import ast.visitor.IVisitor;
 import rekursiverAbstieg.Token;
 
 /***

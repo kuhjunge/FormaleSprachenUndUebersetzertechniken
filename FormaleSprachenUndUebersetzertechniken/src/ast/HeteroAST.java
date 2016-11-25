@@ -1,5 +1,6 @@
 package ast;
 
+import ast.visitor.IVisitor;
 import rekursiverAbstieg.Token;
 
 /***
@@ -20,10 +21,14 @@ public abstract class HeteroAST { // Heterogeneous AST node type
 		this.token = t;
 	}
 
-	/** Create node from token type; used mainly for imaginary tokens 
-	public HeteroAST(int tokenType) {
-		this.token = new Token(tokenType);
-	}*/
+	/**
+	 * Create node from token type; used mainly for imaginary tokens public
+	 * HeteroAST(int tokenType) { this.token = new Token(tokenType); }
+	 */
+	
+    public <T> T accept(IVisitor<T> visitor) {
+    	return visitor.visit(this); 
+    }
 
 	/** Compute string for single node */
 	@Override
@@ -36,6 +41,4 @@ public abstract class HeteroAST { // Heterogeneous AST node type
 	public String toStringTree() {
 		return toString();
 	}
-	
-	
 }

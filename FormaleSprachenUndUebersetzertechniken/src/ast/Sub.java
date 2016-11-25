@@ -1,9 +1,13 @@
 package ast;
 
+import ast.visitor.IVisitor;
 import rekursiverAbstieg.Token;
 
 public class Sub extends Binary {
-	public Sub(ExprNode left, Token addToken, ExprNode right) {
-		super(left, addToken, right);
-	}
+	public Sub(ExprNode left, Token token, ExprNode right) {
+		super(left, token, right);	}
+
+    public <T> T accept(IVisitor<T> visitor) {
+    	return visitor.visit(this); 
+    }
 }

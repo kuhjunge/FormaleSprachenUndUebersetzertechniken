@@ -1,5 +1,6 @@
 package ast;
 
+import ast.visitor.IVisitor;
 import rekursiverAbstieg.Token;
 
 /***
@@ -14,4 +15,12 @@ public class Int extends ExprNode {
 	public Int(Token t) {
 		super(t);
 	}
+	
+	public int getValue(){
+		return Integer.parseInt(token.text);
+	}
+
+    public <T> T accept(IVisitor<T> visitor) {
+    	return visitor.visit(this); 
+    }
 }

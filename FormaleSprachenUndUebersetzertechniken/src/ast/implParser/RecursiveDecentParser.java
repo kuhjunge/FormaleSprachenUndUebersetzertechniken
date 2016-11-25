@@ -161,7 +161,7 @@ public class RecursiveDecentParser extends Parser {
 			node = sum();
 			match(RBRACK);
 		} else if (this.lookahead.type == INTEGER) {
-			match( INTEGER );
+			match(INTEGER);
 			node = new Int(token);
 		} else if (this.lookahead.type == UMINUS) {
 			match(UMINUS);
