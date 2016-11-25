@@ -14,13 +14,13 @@ import org.testng.annotations.DataProvider;
 public class ASTTestNG {
 	final String end = "\n";
 	
-	//@Test(dataProvider = "dp")
+	@Test(dataProvider = "dp")
 	public void testStringVisitor(String s){
 		Lexer lexer = new RecursiveDecentLexer(s);
 		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
 		HeteroAST ast = parser.statlist();
 		IVisitor<String> visitor = new ToStringVisitorNT();
-		System.out.println("Visitor: " + ast.accept(visitor));
+		System.out.println("SV: " + ast.accept(visitor));
 	}
 	
 	@Test(dataProvider = "dp")
@@ -29,10 +29,46 @@ public class ASTTestNG {
 		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
 		HeteroAST ast = parser.statlist();
 		IVisitor<Double> visitor = new evalVisitorNT();
-		System.out.println("Visitor: " + ast.accept(visitor));
+		System.out.println("EV: " + ast.accept(visitor));
+	}
+	
+	@Test(dataProvider = "dp")
+	public void testStringVisitorTokenType(String s){
+		Lexer lexer = new RecursiveDecentLexer(s);
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		HeteroAST ast = parser.statlist();
+		ToStringVisitorNT visitor = new ToStringVisitorNT();
+		System.out.println("STT: " + visitor.printTokenType(ast));
+	}
+	
+	@Test(dataProvider = "dp")
+	public void testEvalVisitorTokenType(String s){
+		Lexer lexer = new RecursiveDecentLexer(s);
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		HeteroAST ast = parser.statlist();
+		evalVisitorNT visitor = new evalVisitorNT();
+		System.out.println("ETT: " + visitor.evalTokenType(ast));
 	}
 
-	//@Test(dataProvider = "dp")
+	@Test(dataProvider = "dp")
+	public void testStringVisitorNodeType(String s){
+		Lexer lexer = new RecursiveDecentLexer(s);
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		HeteroAST ast = parser.statlist();
+		ToStringVisitorNT visitor = new ToStringVisitorNT();
+		System.out.println("SNT: " + visitor.printNodeType(ast));
+	}
+	
+	@Test(dataProvider = "dp")
+	public void testEvalVisitorNodeType(String s){
+		Lexer lexer = new RecursiveDecentLexer(s);
+		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
+		HeteroAST ast = parser.statlist();
+		evalVisitorNT visitor = new evalVisitorNT();
+		System.out.println("SET: " + visitor.evalNodeType(ast));
+	}
+	
+	@Test(dataProvider = "dp")
 	public void f(String s) {
 		Lexer lexer = new RecursiveDecentLexer(s);
 		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);

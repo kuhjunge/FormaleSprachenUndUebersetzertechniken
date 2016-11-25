@@ -12,7 +12,11 @@ import rekursiverAbstieg.Token;
  * information.
  ***/
 public abstract class HeteroAST { // Heterogeneous AST node type
-	Token token; // Node created from which token?
+	protected Token token; // Node created from which token?
+	
+	public Token getToken(){
+		return token;
+	}
 
 	public HeteroAST() {
 	}
