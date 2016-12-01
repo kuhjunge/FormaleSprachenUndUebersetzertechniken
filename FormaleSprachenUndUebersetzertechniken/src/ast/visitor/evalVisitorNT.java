@@ -1,12 +1,5 @@
 package ast.visitor;
 
-import static rekursiverAbstieg.RecursiveDecentLexer.DIV;
-import static rekursiverAbstieg.RecursiveDecentLexer.INTEGER;
-import static rekursiverAbstieg.RecursiveDecentLexer.MINUS;
-import static rekursiverAbstieg.RecursiveDecentLexer.MULTI;
-import static rekursiverAbstieg.RecursiveDecentLexer.PLUS;
-import static rekursiverAbstieg.RecursiveDecentLexer.UMINUS;
-
 import ast.Add;
 import ast.Div;
 import ast.HeteroAST;
@@ -20,23 +13,6 @@ public class evalVisitorNT implements IVisitor<Double> {
 	public Double evalNodeType(HeteroAST n){
 		return n.accept(this);
 	}
-	
-    public Double evalTokenType(HeteroAST n) { // Token Type
-    	Double erg = 0.0;
-        switch ( n.getToken().type ) {
-            case INTEGER :   erg = visit((Int)n); break;
-            case PLUS:   	 erg = visit((Add)n); break;
-            case MINUS :     erg = visit((Sub)n); break;
-            case UMINUS :    erg = visit((UMinus)n); break;
-            case MULTI :     erg = visit((Mul)n); break;
-            case DIV :       erg = visit((Div)n); break;
-            default :
-                // catch unhandled node types
-                throw new UnsupportedOperationException("Node "+
-                          n.getClass().getName()+ " not handled");
-        }
-        return erg;
-    }
 
 	@Override
 	public Double visit(HeteroAST en) {

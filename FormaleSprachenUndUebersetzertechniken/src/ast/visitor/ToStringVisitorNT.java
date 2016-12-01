@@ -1,6 +1,5 @@
 package ast.visitor;
 
-import static rekursiverAbstieg.RecursiveDecentLexer.*;
 import ast.Add;
 import ast.Div;
 import ast.HeteroAST;
@@ -14,23 +13,6 @@ public class ToStringVisitorNT implements IVisitor<String> {
 	public String printNodeType(HeteroAST n){
 		return n.accept(this);
 	}
-
-    public String printTokenType(HeteroAST n) {
-    	String erg = "";
-        switch ( n.getToken().type ) {
-            case INTEGER :   erg = visit((Int)n); break;
-            case PLUS:   	 erg = visit((Add)n); break;
-            case MINUS :     erg = visit((Sub)n); break;
-            case UMINUS :    erg = visit((UMinus)n); break;
-            case MULTI :     erg = visit((Mul)n); break;
-            case DIV :       erg = visit((Div)n); break;
-            default :
-                // catch unhandled node types
-                throw new UnsupportedOperationException("Node "+
-                          n.getClass().getName()+ " not handled");
-        }
-        return erg;
-    }
 
 	@Override
 	public String visit(HeteroAST en) {

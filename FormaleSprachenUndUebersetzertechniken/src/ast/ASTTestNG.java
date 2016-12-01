@@ -3,9 +3,7 @@ package ast;
 import org.testng.annotations.Test;
 
 import ast.implParser.RecursiveDecentParser;
-import ast.visitor.IVisitor;
-import ast.visitor.ToStringVisitorNT;
-import ast.visitor.evalVisitorNT;
+import ast.visitor.*;
 import rekursiverAbstieg.Lexer;
 import rekursiverAbstieg.RecursiveDecentLexer;
 
@@ -37,8 +35,8 @@ public class ASTTestNG {
 		Lexer lexer = new RecursiveDecentLexer(s);
 		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
 		HeteroAST ast = parser.statlist();
-		ToStringVisitorNT visitor = new ToStringVisitorNT();
-		System.out.println("STT: " + visitor.printTokenType(ast));
+		ToStringVisitorTT visitor = new ToStringVisitorTT();
+		System.out.println("STT: " + visitor.visit(ast));
 	}
 	
 	@Test(dataProvider = "dp")
@@ -46,8 +44,8 @@ public class ASTTestNG {
 		Lexer lexer = new RecursiveDecentLexer(s);
 		RecursiveDecentParser parser = new RecursiveDecentParser(lexer);
 		HeteroAST ast = parser.statlist();
-		evalVisitorNT visitor = new evalVisitorNT();
-		System.out.println("ETT: " + visitor.evalTokenType(ast));
+		evalVisitorTT visitor = new evalVisitorTT();
+		System.out.println("ETT: " + visitor.visit(ast));
 	}
 
 	@Test(dataProvider = "dp")
