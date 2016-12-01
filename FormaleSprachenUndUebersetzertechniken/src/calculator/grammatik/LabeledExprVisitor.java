@@ -47,6 +47,20 @@ public interface LabeledExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitId(@NotNull LabeledExprParser.IdContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code SmaGre}
+	 * labeled alternative in {@link LabeledExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSmaGre(@NotNull LabeledExprParser.SmaGreContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Exp}
+	 * labeled alternative in {@link LabeledExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExp(@NotNull LabeledExprParser.ExpContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LabeledExprParser#prog}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

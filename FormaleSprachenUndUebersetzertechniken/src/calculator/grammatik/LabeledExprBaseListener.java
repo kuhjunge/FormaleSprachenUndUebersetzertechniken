@@ -77,6 +77,30 @@ public class LabeledExprBaseListener implements LabeledExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSmaGre(@NotNull LabeledExprParser.SmaGreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSmaGre(@NotNull LabeledExprParser.SmaGreContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExp(@NotNull LabeledExprParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExp(@NotNull LabeledExprParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterProg(@NotNull LabeledExprParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}

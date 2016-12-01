@@ -6,14 +6,20 @@ stat:   expr NEWLINE                # printExpr
     |   ID '=' expr NEWLINE         # assign
     |   NEWLINE                     # blank
     ;
-
-expr:   expr op=('*'|'/') expr      # MulDiv
+ 
+expr: 
+ 	expr op=('<'|'>') expr			#SmaGre
+ 	| <assoc=right> expr op='^' expr #Exp
+ 	| expr op=('*'|'/') expr		# MulDiv
     |   expr op=('+'|'-') expr      # AddSub
     |   INT                         # int
     |   ID                          # id
     |   '(' expr ')'                # parens
     ;
 
+SMA :	'<' ;
+GRE :   '>' ;
+EXP :   '^' ;
 MUL :   '*' ; // assigns token name to '*' used above in grammar
 DIV :   '/' ;
 ADD :   '+' ;
