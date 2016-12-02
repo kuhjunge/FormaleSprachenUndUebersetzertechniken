@@ -8,10 +8,11 @@ stat:   expr NEWLINE                # printExpr
     ;
  
 expr: 
- 	expr op=('<'|'>') expr			#SmaGre
- 	| <assoc=right> expr op='^' expr #exp
- 	| expr op=('*'|'/') expr		# MulDiv
-    |   expr op=('+'|'-') expr      # AddSub
+ 	    expr op=('<'|'>') expr		#SmaGre
+ 	|<assoc=right> expr op='^' expr #exp
+ 	|   expr op=('*'|'/') expr		# MulDiv
+ 	|   expr op=('+'|'-') expr      # AddSub
+    |   op='-' expr      			# sub
     |   INT                         # int
     |   ID                          # id
     |   '(' expr ')'                # parens

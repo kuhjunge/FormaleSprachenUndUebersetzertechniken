@@ -12,7 +12,7 @@ import org.testng.annotations.DataProvider;
 
 public class CalculatorTestNG {
   @Test(dataProvider = "dp")
-  public void f(String s) {
+  public void f(String s, int erg) {
       ANTLRInputStream input = new ANTLRInputStream(s.toCharArray(), s.length());
       LabeledExprLexer lexer = new LabeledExprLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -26,8 +26,16 @@ public class CalculatorTestNG {
   public Object[][] dp() {
 	  final String end = "\n";
     return new Object[][] {
-		new Object[] { " ( 3 + 4 ) * 5" + end},
-		new Object[] { " 1 + 2  + (5 * 4) + 5" + end},
+		new Object[] { " ( 3 + 4 ) * 5" + end,35},
+		new Object[] { " 1 + 2  + (5 * 4) + 5" + end,28},
+		new Object[] { "5+2" + end,7},
+		new Object[] { "--3+7" + end,10},
+		new Object[] { "3+-7*2" + end,-11},
+		new Object[] { "2^2^3" + end,256},
+		new Object[] { "2^2*2" + end,8},
+		new Object[] { "3<5^2" + end,1},
+		new Object[] { "2^8<10" + end,0},
+		new Object[] { "a = 5+2" + end + "a+7" + end,14},
     };
   }
 }
