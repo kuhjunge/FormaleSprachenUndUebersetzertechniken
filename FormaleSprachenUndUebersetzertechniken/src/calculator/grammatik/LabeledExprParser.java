@@ -1,4 +1,4 @@
-// Generated from LabeledExpr.g4 by ANTLR 4.4
+// Generated from LabeledExpr.g4 by ANTLR 4.5.3
 package calculator.grammatik;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,29 +11,62 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class LabeledExprParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__2=1, T__1=2, T__0=3, SMA=4, GRE=5, EXP=6, MUL=7, DIV=8, ADD=9, SUB=10, 
+		T__0=1, T__1=2, T__2=3, SMA=4, GRE=5, EXP=6, MUL=7, DIV=8, ADD=9, SUB=10, 
 		ID=11, INT=12, NEWLINE=13, WS=14;
-	public static final String[] tokenNames = {
-		"<INVALID>", "'('", "')'", "'='", "'<'", "'>'", "'^'", "'*'", "'/'", "'+'", 
-		"'-'", "ID", "INT", "NEWLINE", "WS"
-	};
 	public static final int
 		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2;
 	public static final String[] ruleNames = {
 		"prog", "stat", "expr"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "LabeledExpr.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+		null, "'='", "'('", "')'", "'<'", "'>'", "'^'", "'*'", "'/'", "'+'", "'-'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", "SUB", 
+		"ID", "INT", "NEWLINE", "WS"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "LabeledExpr.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -49,24 +82,16 @@ public class LabeledExprParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 	public static class ProgContext extends ParserRuleContext {
-		public StatContext stat(int i) {
-			return getRuleContext(StatContext.class,i);
-		}
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
+		}
+		public StatContext stat(int i) {
+			return getRuleContext(StatContext.class,i);
 		}
 		public ProgContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_prog; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterProg(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitProg(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitProg(this);
@@ -87,13 +112,14 @@ public class LabeledExprParser extends Parser {
 			do {
 				{
 				{
-				setState(6); stat();
+				setState(6);
+				stat();
 				}
 				}
 				setState(9); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -122,14 +148,6 @@ public class LabeledExprParser extends Parser {
 		public TerminalNode NEWLINE() { return getToken(LabeledExprParser.NEWLINE, 0); }
 		public BlankContext(StatContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterBlank(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitBlank(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitBlank(this);
 			else return visitor.visitChildren(this);
@@ -141,14 +159,6 @@ public class LabeledExprParser extends Parser {
 		}
 		public TerminalNode NEWLINE() { return getToken(LabeledExprParser.NEWLINE, 0); }
 		public PrintExprContext(StatContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterPrintExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitPrintExpr(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitPrintExpr(this);
@@ -163,14 +173,6 @@ public class LabeledExprParser extends Parser {
 		public TerminalNode NEWLINE() { return getToken(LabeledExprParser.NEWLINE, 0); }
 		public AssignContext(StatContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterAssign(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitAssign(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitAssign(this);
 			else return visitor.visitChildren(this);
@@ -182,30 +184,38 @@ public class LabeledExprParser extends Parser {
 		enterRule(_localctx, 2, RULE_stat);
 		try {
 			setState(20);
+			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
 				_localctx = new PrintExprContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(11); expr(0);
-				setState(12); match(NEWLINE);
+				setState(11);
+				expr(0);
+				setState(12);
+				match(NEWLINE);
 				}
 				break;
 			case 2:
 				_localctx = new AssignContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(14); match(ID);
-				setState(15); match(T__0);
-				setState(16); expr(0);
-				setState(17); match(NEWLINE);
+				setState(14);
+				match(ID);
+				setState(15);
+				match(T__0);
+				setState(16);
+				expr(0);
+				setState(17);
+				match(NEWLINE);
 				}
 				break;
 			case 3:
 				_localctx = new BlankContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(19); match(NEWLINE);
+				setState(19);
+				match(NEWLINE);
 				}
 				break;
 			}
@@ -238,14 +248,6 @@ public class LabeledExprParser extends Parser {
 		}
 		public ParensContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterParens(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitParens(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitParens(this);
 			else return visitor.visitChildren(this);
@@ -260,14 +262,6 @@ public class LabeledExprParser extends Parser {
 			return getRuleContext(ExprContext.class,i);
 		}
 		public MulDivContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterMulDiv(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitMulDiv(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitMulDiv(this);
@@ -284,14 +278,6 @@ public class LabeledExprParser extends Parser {
 		}
 		public AddSubContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterAddSub(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitAddSub(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitAddSub(this);
 			else return visitor.visitChildren(this);
@@ -300,14 +286,6 @@ public class LabeledExprParser extends Parser {
 	public static class IdContext extends ExprContext {
 		public TerminalNode ID() { return getToken(LabeledExprParser.ID, 0); }
 		public IdContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterId(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitId(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitId(this);
@@ -324,14 +302,6 @@ public class LabeledExprParser extends Parser {
 		}
 		public SmaGreContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterSmaGre(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitSmaGre(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitSmaGre(this);
 			else return visitor.visitChildren(this);
@@ -347,14 +317,6 @@ public class LabeledExprParser extends Parser {
 		}
 		public ExpContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterExp(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitExp(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitExp(this);
 			else return visitor.visitChildren(this);
@@ -363,14 +325,6 @@ public class LabeledExprParser extends Parser {
 	public static class IntContext extends ExprContext {
 		public TerminalNode INT() { return getToken(LabeledExprParser.INT, 0); }
 		public IntContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).enterInt(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof LabeledExprListener ) ((LabeledExprListener)listener).exitInt(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitInt(this);
@@ -402,7 +356,8 @@ public class LabeledExprParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(23); match(INT);
+				setState(23);
+				match(INT);
 				}
 				break;
 			case ID:
@@ -410,17 +365,21 @@ public class LabeledExprParser extends Parser {
 				_localctx = new IdContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(24); match(ID);
+				setState(24);
+				match(ID);
 				}
 				break;
-			case T__2:
+			case T__1:
 				{
 				_localctx = new ParensContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(25); match(T__2);
-				setState(26); expr(0);
-				setState(27); match(T__1);
+				setState(25);
+				match(T__1);
+				setState(26);
+				expr(0);
+				setState(27);
+				match(T__2);
 				}
 				break;
 			default:
@@ -436,6 +395,7 @@ public class LabeledExprParser extends Parser {
 					_prevctx = _localctx;
 					{
 					setState(43);
+					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
@@ -448,9 +408,11 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==SMA || _la==GRE) ) {
 							((SmaGreContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						} else {
+							consume();
 						}
-						consume();
-						setState(33); expr(8);
+						setState(33);
+						expr(8);
 						}
 						break;
 					case 2:
@@ -459,8 +421,10 @@ public class LabeledExprParser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(34);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(35); ((ExpContext)_localctx).op = match(EXP);
-						setState(36); expr(6);
+						setState(35);
+						((ExpContext)_localctx).op = match(EXP);
+						setState(36);
+						expr(6);
 						}
 						break;
 					case 3:
@@ -474,9 +438,11 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==MUL || _la==DIV) ) {
 							((MulDivContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						} else {
+							consume();
 						}
-						consume();
-						setState(39); expr(6);
+						setState(39);
+						expr(6);
 						}
 						break;
 					case 4:
@@ -490,9 +456,11 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
 							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						} else {
+							consume();
 						}
-						consume();
-						setState(42); expr(5);
+						setState(42);
+						expr(5);
 						}
 						break;
 					}
@@ -517,16 +485,21 @@ public class LabeledExprParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 2: return expr_sempred((ExprContext)_localctx, predIndex);
+		case 2:
+			return expr_sempred((ExprContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0: return precpred(_ctx, 7);
-		case 1: return precpred(_ctx, 6);
-		case 2: return precpred(_ctx, 5);
-		case 3: return precpred(_ctx, 4);
+		case 0:
+			return precpred(_ctx, 7);
+		case 1:
+			return precpred(_ctx, 6);
+		case 2:
+			return precpred(_ctx, 5);
+		case 3:
+			return precpred(_ctx, 4);
 		}
 		return true;
 	}
@@ -539,9 +512,9 @@ public class LabeledExprParser extends Parser {
 		"\4\6\2\5\3\2\6\7\3\2\t\n\3\2\13\f8\2\t\3\2\2\2\4\26\3\2\2\2\6\37\3\2\2"+
 		"\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3"+
 		"\3\2\2\2\r\16\5\6\4\2\16\17\7\17\2\2\17\27\3\2\2\2\20\21\7\r\2\2\21\22"+
-		"\7\5\2\2\22\23\5\6\4\2\23\24\7\17\2\2\24\27\3\2\2\2\25\27\7\17\2\2\26"+
+		"\7\3\2\2\22\23\5\6\4\2\23\24\7\17\2\2\24\27\3\2\2\2\25\27\7\17\2\2\26"+
 		"\r\3\2\2\2\26\20\3\2\2\2\26\25\3\2\2\2\27\5\3\2\2\2\30\31\b\4\1\2\31 "+
-		"\7\16\2\2\32 \7\r\2\2\33\34\7\3\2\2\34\35\5\6\4\2\35\36\7\4\2\2\36 \3"+
+		"\7\16\2\2\32 \7\r\2\2\33\34\7\4\2\2\34\35\5\6\4\2\35\36\7\5\2\2\36 \3"+
 		"\2\2\2\37\30\3\2\2\2\37\32\3\2\2\2\37\33\3\2\2\2 /\3\2\2\2!\"\f\t\2\2"+
 		"\"#\t\2\2\2#.\5\6\4\n$%\f\b\2\2%&\7\b\2\2&.\5\6\4\b\'(\f\7\2\2()\t\3\2"+
 		"\2).\5\6\4\b*+\f\6\2\2+,\t\4\2\2,.\5\6\4\7-!\3\2\2\2-$\3\2\2\2-\'\3\2"+

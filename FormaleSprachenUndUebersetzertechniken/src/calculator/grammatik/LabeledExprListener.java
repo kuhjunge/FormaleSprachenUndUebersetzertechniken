@@ -81,13 +81,13 @@ public interface LabeledExprListener extends ParseTreeListener {
 	 */
 	void exitSmaGre(@NotNull LabeledExprParser.SmaGreContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Exp}
+	 * Enter a parse tree produced by the {@code exp}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
 	 * @param ctx the parse tree
 	 */
 	void enterExp(@NotNull LabeledExprParser.ExpContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Exp}
+	 * Exit a parse tree produced by the {@code exp}
 	 * labeled alternative in {@link LabeledExprParser#expr}.
 	 * @param ctx the parse tree
 	 */

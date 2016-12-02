@@ -1,6 +1,5 @@
-// Generated from LabeledExpr.g4 by ANTLR 4.4
+// Generated from LabeledExpr.g4 by ANTLR 4.5.3
 package calculator.grammatik;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -18,75 +17,75 @@ public class LabeledExprBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitParens(@NotNull LabeledExprParser.ParensContext ctx) { return visitChildren(ctx); }
+	@Override public T visitProg(LabeledExprParser.ProgContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBlank(@NotNull LabeledExprParser.BlankContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPrintExpr(LabeledExprParser.PrintExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMulDiv(@NotNull LabeledExprParser.MulDivContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssign(LabeledExprParser.AssignContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAddSub(@NotNull LabeledExprParser.AddSubContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBlank(LabeledExprParser.BlankContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitId(@NotNull LabeledExprParser.IdContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParens(LabeledExprParser.ParensContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSmaGre(@NotNull LabeledExprParser.SmaGreContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMulDiv(LabeledExprParser.MulDivContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExp(@NotNull LabeledExprParser.ExpContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAddSub(LabeledExprParser.AddSubContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProg(@NotNull LabeledExprParser.ProgContext ctx) { return visitChildren(ctx); }
+	@Override public T visitId(LabeledExprParser.IdContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitInt(@NotNull LabeledExprParser.IntContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSmaGre(LabeledExprParser.SmaGreContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrintExpr(@NotNull LabeledExprParser.PrintExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExp(LabeledExprParser.ExpContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssign(@NotNull LabeledExprParser.AssignContext ctx) { return visitChildren(ctx); }
+	@Override public T visitInt(LabeledExprParser.IntContext ctx) { return visitChildren(ctx); }
 }

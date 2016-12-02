@@ -1,4 +1,4 @@
-// Generated from Expr.g4 by ANTLR 4.4
+// Generated from Expr.g4 by ANTLR 4.5.3
 package postFix.lexer;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,28 +11,60 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExprParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
 		FLOAT=1, INT=2, PLUS=3, MINUS=4, MUL=5, DIV=6, INV=7, EXP=8, FAC=9, IGNORE=10;
-	public static final String[] tokenNames = {
-		"<INVALID>", "FLOAT", "INT", "PLUS", "MINUS", "MUL", "DIV", "INV", "EXP", 
-		"FAC", "IGNORE"
-	};
 	public static final int
 		RULE_r = 0, RULE_test = 1;
 	public static final String[] ruleNames = {
 		"r", "test"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "Expr.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "FLOAT", "INT", "PLUS", "MINUS", "MUL", "DIV", "INV", "EXP", "FAC", 
+		"IGNORE"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "Expr.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -59,14 +91,6 @@ public class ExprParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_r; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).enterR(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).exitR(this);
-		}
-		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof ExprVisitor ) return ((ExprVisitor<? extends T>)visitor).visitR(this);
 			else return visitor.visitChildren(this);
@@ -86,7 +110,8 @@ public class ExprParser extends Parser {
 			do {
 				{
 				{
-				setState(4); test();
+				setState(4);
+				test();
 				}
 				}
 				setState(7); 
@@ -107,28 +132,20 @@ public class ExprParser extends Parser {
 	}
 
 	public static class TestContext extends ParserRuleContext {
-		public TerminalNode FAC() { return getToken(ExprParser.FAC, 0); }
-		public TerminalNode IGNORE() { return getToken(ExprParser.IGNORE, 0); }
-		public TerminalNode EXP() { return getToken(ExprParser.EXP, 0); }
+		public TerminalNode INT() { return getToken(ExprParser.INT, 0); }
+		public TerminalNode FLOAT() { return getToken(ExprParser.FLOAT, 0); }
 		public TerminalNode PLUS() { return getToken(ExprParser.PLUS, 0); }
 		public TerminalNode MINUS() { return getToken(ExprParser.MINUS, 0); }
-		public TerminalNode INT() { return getToken(ExprParser.INT, 0); }
-		public TerminalNode INV() { return getToken(ExprParser.INV, 0); }
-		public TerminalNode FLOAT() { return getToken(ExprParser.FLOAT, 0); }
-		public TerminalNode DIV() { return getToken(ExprParser.DIV, 0); }
 		public TerminalNode MUL() { return getToken(ExprParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(ExprParser.DIV, 0); }
+		public TerminalNode INV() { return getToken(ExprParser.INV, 0); }
+		public TerminalNode EXP() { return getToken(ExprParser.EXP, 0); }
+		public TerminalNode FAC() { return getToken(ExprParser.FAC, 0); }
+		public TerminalNode IGNORE() { return getToken(ExprParser.IGNORE, 0); }
 		public TestContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_test; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).enterTest(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).exitTest(this);
-		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof ExprVisitor ) return ((ExprVisitor<? extends T>)visitor).visitTest(this);
@@ -147,8 +164,9 @@ public class ExprParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << FLOAT) | (1L << INT) | (1L << PLUS) | (1L << MINUS) | (1L << MUL) | (1L << DIV) | (1L << INV) | (1L << EXP) | (1L << FAC) | (1L << IGNORE))) != 0)) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
 			}
 		}
 		catch (RecognitionException re) {

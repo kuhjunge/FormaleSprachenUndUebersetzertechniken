@@ -1,6 +1,5 @@
-// Generated from ExprRecog.g4 by ANTLR 4.4
+// Generated from ExprRecog.g4 by ANTLR 4.5.3
 package exprRecognizer;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -18,12 +17,12 @@ public class ExprRecogBaseVisitor<T> extends AbstractParseTreeVisitor<T> impleme
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStat(@NotNull ExprRecogParser.StatContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStat(ExprRecogParser.StatContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpr(@NotNull ExprRecogParser.ExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpr(ExprRecogParser.ExprContext ctx) { return visitChildren(ctx); }
 }

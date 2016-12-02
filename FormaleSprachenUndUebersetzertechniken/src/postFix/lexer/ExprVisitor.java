@@ -1,6 +1,5 @@
-// Generated from Expr.g4 by ANTLR 4.4
+// Generated from Expr.g4 by ANTLR 4.5.3
 package postFix.lexer;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -16,11 +15,11 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitR(@NotNull ExprParser.RContext ctx);
+	T visitR(ExprParser.RContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprParser#test}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTest(@NotNull ExprParser.TestContext ctx);
+	T visitTest(ExprParser.TestContext ctx);
 }

@@ -1,4 +1,4 @@
-// Generated from LabeledExpr.g4 by ANTLR 4.4
+// Generated from LabeledExpr.g4 by ANTLR 4.5.3
 package calculator.grammatik;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -11,27 +11,62 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class LabeledExprLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__2=1, T__1=2, T__0=3, SMA=4, GRE=5, EXP=6, MUL=7, DIV=8, ADD=9, SUB=10, 
+		T__0=1, T__1=2, T__2=3, SMA=4, GRE=5, EXP=6, MUL=7, DIV=8, ADD=9, SUB=10, 
 		ID=11, INT=12, NEWLINE=13, WS=14;
 	public static String[] modeNames = {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] tokenNames = {
-		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'", "'\\u0004'", "'\\u0005'", 
-		"'\\u0006'", "'\\u0007'", "'\b'", "'\t'", "'\n'", "'\\u000B'", "'\f'", 
-		"'\r'", "'\\u000E'"
-	};
 	public static final String[] ruleNames = {
-		"T__2", "T__1", "T__0", "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", "SUB", 
+		"T__0", "T__1", "T__2", "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", "SUB", 
 		"ID", "INT", "NEWLINE", "WS"
 	};
+
+	private static final String[] _LITERAL_NAMES = {
+		null, "'='", "'('", "')'", "'<'", "'>'", "'^'", "'*'", "'/'", "'+'", "'-'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", "SUB", 
+		"ID", "INT", "NEWLINE", "WS"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
 
 
 	public LabeledExprLexer(CharStream input) {
@@ -41,9 +76,6 @@ public class LabeledExprLexer extends Lexer {
 
 	@Override
 	public String getGrammarFileName() { return "LabeledExpr.g4"; }
-
-	@Override
-	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -70,7 +102,7 @@ public class LabeledExprLexer extends Lexer {
 		"\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\3\37\3\2\2\2\5!\3\2\2\2\7#\3"+
 		"\2\2\2\t%\3\2\2\2\13\'\3\2\2\2\r)\3\2\2\2\17+\3\2\2\2\21-\3\2\2\2\23/"+
 		"\3\2\2\2\25\61\3\2\2\2\27\64\3\2\2\2\319\3\2\2\2\33>\3\2\2\2\35C\3\2\2"+
-		"\2\37 \7*\2\2 \4\3\2\2\2!\"\7+\2\2\"\6\3\2\2\2#$\7?\2\2$\b\3\2\2\2%&\7"+
+		"\2\37 \7?\2\2 \4\3\2\2\2!\"\7*\2\2\"\6\3\2\2\2#$\7+\2\2$\b\3\2\2\2%&\7"+
 		">\2\2&\n\3\2\2\2\'(\7@\2\2(\f\3\2\2\2)*\7`\2\2*\16\3\2\2\2+,\7,\2\2,\20"+
 		"\3\2\2\2-.\7\61\2\2.\22\3\2\2\2/\60\7-\2\2\60\24\3\2\2\2\61\62\7/\2\2"+
 		"\62\26\3\2\2\2\63\65\t\2\2\2\64\63\3\2\2\2\65\66\3\2\2\2\66\64\3\2\2\2"+

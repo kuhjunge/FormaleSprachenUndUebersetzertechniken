@@ -1,6 +1,5 @@
-// Generated from Expr.g4 by ANTLR 4.4
+// Generated from Expr.g4 by ANTLR 4.5.3
 package postFix.lexer;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -18,12 +17,12 @@ public class ExprBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements E
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitR(@NotNull ExprParser.RContext ctx) { return visitChildren(ctx); }
+	@Override public T visitR(ExprParser.RContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTest(@NotNull ExprParser.TestContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTest(ExprParser.TestContext ctx) { return visitChildren(ctx); }
 }

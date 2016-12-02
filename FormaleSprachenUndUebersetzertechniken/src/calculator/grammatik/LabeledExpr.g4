@@ -9,7 +9,7 @@ stat:   expr NEWLINE                # printExpr
  
 expr: 
  	expr op=('<'|'>') expr			#SmaGre
- 	| <assoc=right> expr op='^' expr #Exp
+ 	| <assoc=right> expr op='^' expr #exp
  	| expr op=('*'|'/') expr		# MulDiv
     |   expr op=('+'|'-') expr      # AddSub
     |   INT                         # int

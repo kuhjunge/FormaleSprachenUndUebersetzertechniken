@@ -1,6 +1,5 @@
-// Generated from ExprRecog.g4 by ANTLR 4.4
+// Generated from ExprRecog.g4 by ANTLR 4.5.3
 package exprRecognizer;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -16,11 +15,11 @@ public interface ExprRecogVisitor<T> extends ParseTreeVisitor<T> {
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStat(@NotNull ExprRecogParser.StatContext ctx);
+	T visitStat(ExprRecogParser.StatContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ExprRecogParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr(@NotNull ExprRecogParser.ExprContext ctx);
+	T visitExpr(ExprRecogParser.ExprContext ctx);
 }

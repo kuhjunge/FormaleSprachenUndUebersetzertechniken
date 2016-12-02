@@ -1,4 +1,4 @@
-// Generated from C.g4 by ANTLR 4.4
+// Generated from C.g4 by ANTLR 4.5.3
 package halstead.lexer;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class C extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -22,15 +22,50 @@ public class C extends Lexer {
 		"DEFAULT_MODE"
 	};
 
-	public static final String[] tokenNames = {
-		"'\\u0000'", "'\\u0001'", "'\\u0002'", "'\\u0003'"
-	};
 	public static final String[] ruleNames = {
 		"OPERATOR", "IGNORE", "OPERAND", "RESERVED", "OPERATORS", "TYPE_QUAL", 
 		"SCSPEC", "IGNORESYMBOLS2", "CONSTANT", "TYPESPEC", "IDENTIFIER", "FLOAT", 
 		"STRING", "INT", "LINE_COMMENT", "COMMENT", "INCLUDE", "ALOTOFWHITESPACE", 
 		"IGNORESYMBOLS", "DIGIT", "LETTER", "LETTERBIG", "WHITESPACE"
 	};
+
+	private static final String[] _LITERAL_NAMES = {
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "OPERATOR", "IGNORE", "OPERAND"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
 
 
 	public C(CharStream input) {
@@ -40,9 +75,6 @@ public class C extends Lexer {
 
 	@Override
 	public String getGrammarFileName() { return "C.g4"; }
-
-	@Override
-	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
