@@ -304,21 +304,6 @@ public class LabeledExprParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SmaGreContext extends ExprContext {
-		public Token op;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public SmaGreContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitSmaGre(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class ExpContext extends ExprContext {
 		public Token op;
 		public List<ExprContext> expr() {
@@ -331,6 +316,21 @@ public class LabeledExprParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitExp(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SmaGreContext extends ExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public SmaGreContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LabeledExprVisitor ) return ((LabeledExprVisitor<? extends T>)visitor).visitSmaGre(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -422,11 +422,23 @@ public class LabeledExprParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
-						_localctx = new SmaGreContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new ExpContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(33);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						setState(34);
+						((ExpContext)_localctx).op = match(EXP);
+						setState(35);
+						expr(8);
+						}
+						break;
+					case 2:
+						{
+						_localctx = new SmaGreContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(36);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(37);
 						((SmaGreContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==SMA || _la==GRE) ) {
@@ -434,20 +446,8 @@ public class LabeledExprParser extends Parser {
 						} else {
 							consume();
 						}
-						setState(35);
-						expr(9);
-						}
-						break;
-					case 2:
-						{
-						_localctx = new ExpContext(new ExprContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(36);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
-						setState(37);
-						((ExpContext)_localctx).op = match(EXP);
 						setState(38);
-						expr(7);
+						expr(8);
 						}
 						break;
 					case 3:
@@ -539,11 +539,11 @@ public class LabeledExprParser extends Parser {
 		"\17\2\2\26\r\3\2\2\2\26\20\3\2\2\2\26\25\3\2\2\2\27\5\3\2\2\2\30\31\b"+
 		"\4\1\2\31\32\7\f\2\2\32\"\5\6\4\6\33\"\7\16\2\2\34\"\7\r\2\2\35\36\7\4"+
 		"\2\2\36\37\5\6\4\2\37 \7\5\2\2 \"\3\2\2\2!\30\3\2\2\2!\33\3\2\2\2!\34"+
-		"\3\2\2\2!\35\3\2\2\2\"\61\3\2\2\2#$\f\n\2\2$%\t\2\2\2%\60\5\6\4\13&\'"+
-		"\f\t\2\2\'(\7\b\2\2(\60\5\6\4\t)*\f\b\2\2*+\t\3\2\2+\60\5\6\4\t,-\f\7"+
-		"\2\2-.\t\4\2\2.\60\5\6\4\b/#\3\2\2\2/&\3\2\2\2/)\3\2\2\2/,\3\2\2\2\60"+
-		"\63\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\7\3\2\2\2\63\61\3\2\2\2\7\13"+
-		"\26!/\61";
+		"\3\2\2\2!\35\3\2\2\2\"\61\3\2\2\2#$\f\n\2\2$%\7\b\2\2%\60\5\6\4\n&\'\f"+
+		"\t\2\2\'(\t\2\2\2(\60\5\6\4\n)*\f\b\2\2*+\t\3\2\2+\60\5\6\4\t,-\f\7\2"+
+		"\2-.\t\4\2\2.\60\5\6\4\b/#\3\2\2\2/&\3\2\2\2/)\3\2\2\2/,\3\2\2\2\60\63"+
+		"\3\2\2\2\61/\3\2\2\2\61\62\3\2\2\2\62\7\3\2\2\2\63\61\3\2\2\2\7\13\26"+
+		"!/\61";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

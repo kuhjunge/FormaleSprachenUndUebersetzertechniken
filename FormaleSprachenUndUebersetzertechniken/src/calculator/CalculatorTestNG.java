@@ -11,6 +11,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.testng.annotations.DataProvider;
 
 public class CalculatorTestNG {
+	  final String end = "\n";
+	
   @Test(dataProvider = "dp")
   public void f(String s, int erg) {
       ANTLRInputStream input = new ANTLRInputStream(s.toCharArray(), s.length());
@@ -19,12 +21,12 @@ public class CalculatorTestNG {
       LabeledExprParser parser = new LabeledExprParser(tokens);
       ParseTree tree = parser.prog(); // parse
       EvalVisitor eval = new EvalVisitor();
-      System.out.println("Ergebnis: " + eval.visit(tree));
+      System.out.println(erg + end + "Ergebnis: " + eval.visit(tree));
   }
 
   @DataProvider
   public Object[][] dp() {
-	  final String end = "\n";
+
     return new Object[][] {
 		new Object[] { " ( 3 + 4 ) * 5" + end,35},
 		new Object[] { " 1 + 2  + (5 * 4) + 5" + end,28},
