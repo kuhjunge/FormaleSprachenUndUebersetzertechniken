@@ -5,7 +5,10 @@ prog:   stat+ ;
 stat:   expr NEWLINE                # printExpr
     |   ID '=' expr NEWLINE         # assign
     |   NEWLINE                     # blank
+    | 	clear						# clean
     ;
+ 
+clear: '#' ;
  
 expr: 
  	 <assoc=right> expr op='^' expr #exp

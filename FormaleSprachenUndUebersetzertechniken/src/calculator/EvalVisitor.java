@@ -11,8 +11,6 @@ package calculator;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.antlr.v4.runtime.tree.ParseTree;
-
 import calculator.grammatik.*;
 
 public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
@@ -105,6 +103,11 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 		return (int) Math.pow(left, right);
 	}
 
+	public Integer visitClear(LabeledExprParser.ClearContext ctx){
+		memory = new HashMap<String, Integer>();
+		return 0;
+	}
+	
 	/*
 	 * @Override public Integer visit(ParseTree tree){ return null;
 	 * 

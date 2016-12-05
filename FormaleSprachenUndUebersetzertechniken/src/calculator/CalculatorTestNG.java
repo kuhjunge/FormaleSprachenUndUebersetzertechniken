@@ -38,6 +38,7 @@ public class CalculatorTestNG {
 		new Object[] { "3<5^2" + end,1},
 		new Object[] { "2^8<10" + end,0},
 		new Object[] { "a = 5+2" + end + "a+7" + end,14},
+		new Object[] { "a = 5+2" + end  + "#" + end+ "a+7" + end,7},
     };
   }
 }
