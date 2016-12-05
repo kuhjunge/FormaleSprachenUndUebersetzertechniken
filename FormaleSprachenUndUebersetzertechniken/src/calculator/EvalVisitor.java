@@ -11,6 +11,8 @@ package calculator;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.antlr.v4.runtime.tree.ParseTree;
+
 import calculator.grammatik.*;
 
 public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
@@ -69,7 +71,7 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 		return left - right; // must be SUB
 	}
 
-	/** expr op=('+'|'-') expr */
+	/** expr op=('<'|'>') expr */
 	@Override
 	public Integer visitSmaGre(LabeledExprParser.SmaGreContext ctx) {
 		int left = visit(ctx.expr(0)); // get value of left subexpression
@@ -103,16 +105,11 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 		return (int) Math.pow(left, right);
 	}
 
+	@Override
 	public Integer visitClear(LabeledExprParser.ClearContext ctx){
 		memory.clear();
 		return 0;
-	}
-	
-	/*
-	 * @Override public Integer visit(ParseTree tree){ return null;
-	 * 
-	 * }
-	 */
+	} 
 
 	/** '(' expr ')' */
 	@Override

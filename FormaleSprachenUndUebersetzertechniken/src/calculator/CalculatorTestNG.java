@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import calculator.grammatik.*;
 import calculator.interpreterGrammatik.*;
 
+import java.io.BufferedReader;
+
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -27,12 +29,14 @@ public class CalculatorTestNG {
   @Test(dataProvider = "dp")
   public void f2(String s, int erg) {
       ANTLRInputStream input = new ANTLRInputStream(s.toCharArray(), s.length());
+      ExprParser parser = new ExprParser(null); // share single parser instance
+      parser.setBuildParseTree(false); 
       ExprLexer lexer = new ExprLexer(input);
+      lexer.setLine(0);           // notify lexer of input position
+      lexer.setCharPositionInLine(0);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
-      ExprParser parser = new ExprParser(tokens);
-      ParseTree tree = parser.prog(); // parse
-      EvalVisitor eval = new EvalVisitor();
-      System.out.println(erg + end + "Ergebnis: " + eval.visit(tree));
+      parser.setInputStream(tokens); // notify parser of new token stream
+      parser.stat();                 // start the parser
   }
   
   @DataProvider
@@ -55,3 +59,4 @@ public class CalculatorTestNG {
     };
   }
 }
+
