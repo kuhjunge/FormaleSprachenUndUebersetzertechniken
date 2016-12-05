@@ -20,8 +20,8 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, SMA=5, GRE=6, EXP=7, MUL=8, DIV=9, ADD=10, 
-		SUB=11, ID=12, INT=13, NEWLINE=14, WS=15;
+		T__0=1, T__1=2, SMA=3, GRE=4, EXP=5, MUL=6, DIV=7, ADD=8, SUB=9, LBRACK=10, 
+		RBRACK=11, ID=12, INT=13, NEWLINE=14, WS=15;
 	public static final int
 		RULE_prog = 0, RULE_stat = 1, RULE_clear = 2, RULE_e = 3;
 	public static final String[] ruleNames = {
@@ -29,12 +29,12 @@ public class ExprParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'='", "'#'", "'('", "')'", "'<'", "'>'", "'^'", "'*'", "'/'", "'+'", 
-		"'-'"
+		null, "'='", "'#'", "'<'", "'>'", "'^'", "'*'", "'/'", "'+'", "'-'", "'('", 
+		"')'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", 
-		"SUB", "ID", "INT", "NEWLINE", "WS"
+		null, null, null, "SMA", "GRE", "EXP", "MUL", "DIV", "ADD", "SUB", "LBRACK", 
+		"RBRACK", "ID", "INT", "NEWLINE", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -152,7 +152,7 @@ public class ExprParser extends Parser {
 				setState(11); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << SUB) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << SUB) | (1L << LBRACK) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -284,7 +284,6 @@ public class ExprParser extends Parser {
 		public int v;
 		public EContext a;
 		public Token op;
-		public EContext e;
 		public Token INT;
 		public Token ID;
 		public EContext b;
@@ -296,6 +295,8 @@ public class ExprParser extends Parser {
 		}
 		public TerminalNode INT() { return getToken(ExprParser.INT, 0); }
 		public TerminalNode ID() { return getToken(ExprParser.ID, 0); }
+		public TerminalNode LBRACK() { return getToken(ExprParser.LBRACK, 0); }
+		public TerminalNode RBRACK() { return getToken(ExprParser.RBRACK, 0); }
 		public EContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -330,7 +331,7 @@ public class ExprParser extends Parser {
 				setState(31);
 				((EContext)_localctx).op = match(SUB);
 				setState(32);
-				((EContext)_localctx).a = ((EContext)_localctx).e = e(4);
+				((EContext)_localctx).a = e(4);
 				((EContext)_localctx).v =  evalUnaer(((EContext)_localctx).a.v, (((EContext)_localctx).op!=null?((EContext)_localctx).op.getType():0));
 				}
 				break;
@@ -351,15 +352,15 @@ public class ExprParser extends Parser {
 				      
 				}
 				break;
-			case T__2:
+			case LBRACK:
 				{
 				setState(39);
-				match(T__2);
+				match(LBRACK);
 				setState(40);
-				((EContext)_localctx).e = e(0);
+				((EContext)_localctx).a = e(0);
 				setState(41);
-				match(T__3);
-				((EContext)_localctx).v =  _localctx.v;
+				match(RBRACK);
+				((EContext)_localctx).v =  ((EContext)_localctx).a.v;
 				}
 				break;
 			default:
@@ -388,7 +389,7 @@ public class ExprParser extends Parser {
 						setState(47);
 						((EContext)_localctx).op = match(EXP);
 						setState(48);
-						((EContext)_localctx).b = ((EContext)_localctx).e = e(8);
+						((EContext)_localctx).b = e(8);
 						((EContext)_localctx).v =  eval(((EContext)_localctx).a.v, (((EContext)_localctx).op!=null?((EContext)_localctx).op.getType():0), ((EContext)_localctx).b.v);
 						}
 						break;
@@ -409,7 +410,7 @@ public class ExprParser extends Parser {
 							consume();
 						}
 						setState(53);
-						((EContext)_localctx).b = ((EContext)_localctx).e = e(8);
+						((EContext)_localctx).b = e(8);
 						((EContext)_localctx).v =  eval(((EContext)_localctx).a.v, (((EContext)_localctx).op!=null?((EContext)_localctx).op.getType():0), ((EContext)_localctx).b.v);
 						}
 						break;
@@ -430,7 +431,7 @@ public class ExprParser extends Parser {
 							consume();
 						}
 						setState(58);
-						((EContext)_localctx).b = ((EContext)_localctx).e = e(7);
+						((EContext)_localctx).b = e(7);
 						((EContext)_localctx).v =  eval(((EContext)_localctx).a.v, (((EContext)_localctx).op!=null?((EContext)_localctx).op.getType():0), ((EContext)_localctx).b.v);
 						}
 						break;
@@ -451,7 +452,7 @@ public class ExprParser extends Parser {
 							consume();
 						}
 						setState(63);
-						((EContext)_localctx).b = ((EContext)_localctx).e = e(6);
+						((EContext)_localctx).b = e(6);
 						((EContext)_localctx).v =  eval(((EContext)_localctx).a.v, (((EContext)_localctx).op!=null?((EContext)_localctx).op.getType():0), ((EContext)_localctx).b.v);
 						}
 						break;
@@ -502,21 +503,21 @@ public class ExprParser extends Parser {
 		"\3\3\3\3\3\3\3\3\3\3\3\5\3\34\n\3\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5"+
 		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5/\n\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5"+
 		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5E\n\5\f\5\16\5"+
-		"H\13\5\3\5\2\3\b\6\2\4\6\b\2\5\3\2\7\b\3\2\n\13\3\2\f\rP\2\13\3\2\2\2"+
+		"H\13\5\3\5\2\3\b\6\2\4\6\b\2\5\3\2\5\6\3\2\b\t\3\2\n\13P\2\13\3\2\2\2"+
 		"\4\33\3\2\2\2\6\35\3\2\2\2\b.\3\2\2\2\n\f\5\4\3\2\13\n\3\2\2\2\f\r\3\2"+
 		"\2\2\r\13\3\2\2\2\r\16\3\2\2\2\16\3\3\2\2\2\17\20\5\b\5\2\20\21\7\20\2"+
 		"\2\21\22\b\3\1\2\22\34\3\2\2\2\23\24\7\16\2\2\24\25\7\3\2\2\25\26\5\b"+
 		"\5\2\26\27\7\20\2\2\27\30\b\3\1\2\30\34\3\2\2\2\31\34\7\20\2\2\32\34\5"+
 		"\6\4\2\33\17\3\2\2\2\33\23\3\2\2\2\33\31\3\2\2\2\33\32\3\2\2\2\34\5\3"+
-		"\2\2\2\35\36\7\4\2\2\36\37\b\4\1\2\37\7\3\2\2\2 !\b\5\1\2!\"\7\r\2\2\""+
-		"#\5\b\5\6#$\b\5\1\2$/\3\2\2\2%&\7\17\2\2&/\b\5\1\2\'(\7\16\2\2(/\b\5\1"+
-		"\2)*\7\5\2\2*+\5\b\5\2+,\7\6\2\2,-\b\5\1\2-/\3\2\2\2. \3\2\2\2.%\3\2\2"+
-		"\2.\'\3\2\2\2.)\3\2\2\2/F\3\2\2\2\60\61\f\n\2\2\61\62\7\t\2\2\62\63\5"+
-		"\b\5\n\63\64\b\5\1\2\64E\3\2\2\2\65\66\f\t\2\2\66\67\t\2\2\2\678\5\b\5"+
-		"\n89\b\5\1\29E\3\2\2\2:;\f\b\2\2;<\t\3\2\2<=\5\b\5\t=>\b\5\1\2>E\3\2\2"+
-		"\2?@\f\7\2\2@A\t\4\2\2AB\5\b\5\bBC\b\5\1\2CE\3\2\2\2D\60\3\2\2\2D\65\3"+
-		"\2\2\2D:\3\2\2\2D?\3\2\2\2EH\3\2\2\2FD\3\2\2\2FG\3\2\2\2G\t\3\2\2\2HF"+
-		"\3\2\2\2\7\r\33.DF";
+		"\2\2\2\35\36\7\4\2\2\36\37\b\4\1\2\37\7\3\2\2\2 !\b\5\1\2!\"\7\13\2\2"+
+		"\"#\5\b\5\6#$\b\5\1\2$/\3\2\2\2%&\7\17\2\2&/\b\5\1\2\'(\7\16\2\2(/\b\5"+
+		"\1\2)*\7\f\2\2*+\5\b\5\2+,\7\r\2\2,-\b\5\1\2-/\3\2\2\2. \3\2\2\2.%\3\2"+
+		"\2\2.\'\3\2\2\2.)\3\2\2\2/F\3\2\2\2\60\61\f\n\2\2\61\62\7\7\2\2\62\63"+
+		"\5\b\5\n\63\64\b\5\1\2\64E\3\2\2\2\65\66\f\t\2\2\66\67\t\2\2\2\678\5\b"+
+		"\5\n89\b\5\1\29E\3\2\2\2:;\f\b\2\2;<\t\3\2\2<=\5\b\5\t=>\b\5\1\2>E\3\2"+
+		"\2\2?@\f\7\2\2@A\t\4\2\2AB\5\b\5\bBC\b\5\1\2CE\3\2\2\2D\60\3\2\2\2D\65"+
+		"\3\2\2\2D:\3\2\2\2D?\3\2\2\2EH\3\2\2\2FD\3\2\2\2FG\3\2\2\2G\t\3\2\2\2"+
+		"HF\3\2\2\2\7\r\33.DF";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

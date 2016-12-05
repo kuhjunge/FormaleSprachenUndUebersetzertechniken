@@ -57,7 +57,7 @@ e returns [int v]
       String id = $ID.text;
       $v = memory.containsKey(id) ? memory.get(id) : 0;
       }
-    | '(' e ')'             {$v = $e.v;}       
+    | LBRACK a=e RBRACK             {$v = $a.v;}       
     ; 
 
 SMA : '<' ;
@@ -67,6 +67,8 @@ MUL : '*' ;
 DIV : '/' ;
 ADD : '+' ;
 SUB : '-' ;
+LBRACK : '(';
+RBRACK : ')';
 
 ID  :   [a-zA-Z]+ ;      // match identifiers
 INT :   [0-9]+ ;         // match integers
