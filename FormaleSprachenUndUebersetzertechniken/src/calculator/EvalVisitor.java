@@ -104,7 +104,7 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	}
 
 	public Integer visitClear(LabeledExprParser.ClearContext ctx){
-		memory = new HashMap<String, Integer>();
+		memory.clear();
 		return 0;
 	}
 	
