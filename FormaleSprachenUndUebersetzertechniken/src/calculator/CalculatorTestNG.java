@@ -5,25 +5,23 @@ import org.testng.annotations.Test;
 import calculator.grammatik.*;
 import calculator.interpreterGrammatik.*;
 
-import java.io.BufferedReader;
-
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 public class CalculatorTestNG {
-	  final String end = "\n";
+  final String end = "\n";
 	
   @Test(dataProvider = "dp")
   public void f(String s, int erg) {
+	  int localErg =0;
       ANTLRInputStream input = new ANTLRInputStream(s.toCharArray(), s.length());
       LabeledExprLexer lexer = new LabeledExprLexer(input);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       LabeledExprParser parser = new LabeledExprParser(tokens);
-      ParseTree tree = parser.prog(); // parse
-      EvalVisitor eval = new EvalVisitor();
-      System.out.println(erg + end + "Ergebnis: " + eval.visit(tree));
+      localErg = new EvalVisitor().visit(parser.prog());
+      Assert.assertTrue(erg == localErg);
   }
 
   @Test(dataProvider = "dp")
@@ -37,6 +35,7 @@ public class CalculatorTestNG {
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       parser.setInputStream(tokens); // notify parser of new token stream
       parser.stat();                 // start the parser
+      System.out.println(erg + " <- " + s);
   }
   
   @DataProvider

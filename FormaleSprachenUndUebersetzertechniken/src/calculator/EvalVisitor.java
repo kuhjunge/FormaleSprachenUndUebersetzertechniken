@@ -11,8 +11,6 @@ package calculator;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.antlr.v4.runtime.tree.ParseTree;
-
 import calculator.grammatik.*;
 
 public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
@@ -32,8 +30,7 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	@Override
 	public Integer visitPrintExpr(LabeledExprParser.PrintExprContext ctx) {
 		Integer value = visit(ctx.expr()); // evaluate the expr child
-		System.out.println(value); // print the result
-		return 0; // return dummy value
+		return value; // return dummy value
 	}
 
 	/** INT */
