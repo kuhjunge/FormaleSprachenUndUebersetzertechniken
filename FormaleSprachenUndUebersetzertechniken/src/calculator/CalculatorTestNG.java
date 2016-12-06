@@ -34,7 +34,7 @@ public class CalculatorTestNG {
       lexer.setCharPositionInLine(0);
       CommonTokenStream tokens = new CommonTokenStream(lexer);
       parser.setInputStream(tokens); // notify parser of new token stream
-      parser.stat();                 // start the parser
+      parser.prog();                 // start the parser
       System.out.println(erg + " <- " + s);
   }
   

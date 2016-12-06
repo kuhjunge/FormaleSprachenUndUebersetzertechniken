@@ -11,8 +11,8 @@ stat:   expr NEWLINE                # printExpr
 clear: '#' ;
  
 expr: 
- 	 <assoc=right> expr op='^' expr #exp
- 	|   expr op=('<'|'>') expr		#SmaGre
+ 	 <assoc=right> expr op='^' expr # exp
+ 	|   expr op=('<'|'>') expr		# SmaGre
  	|   expr op=('*'|'/') expr		# MulDiv
  	|   expr op=('+'|'-') expr      # AddSub
     |   op='-' expr      			# sub

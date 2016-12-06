@@ -50,14 +50,14 @@ e returns [int v]
     | a=e op=('<'|'>') b=e  {$v = eval($a.v, $op.type, $b.v);}
     | a=e op=('*'|'/') b=e  {$v = eval($a.v, $op.type, $b.v);}
     | a=e op=('+'|'-') b=e  {$v = eval($a.v, $op.type, $b.v);}
-    | op='-' a=e {$v = evalUnaer($a.v, $op.type);} 
+    |     op='-' 	   a=e  {$v = evalUnaer($a.v, $op.type);} 
     | INT                   {$v = $INT.int;}    
     | ID
       {
       String id = $ID.text;
       $v = memory.containsKey(id) ? memory.get(id) : 0;
       }
-    | LBRACK a=e RBRACK             {$v = $a.v;}       
+    | LBRACK a=e RBRACK     {$v = $a.v;}       
     ; 
 
 SMA : '<' ;
