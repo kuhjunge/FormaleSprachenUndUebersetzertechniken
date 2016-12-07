@@ -30,6 +30,7 @@ public class EvalVisitor extends LabeledExprBaseVisitor<Integer> {
 	@Override
 	public Integer visitPrintExpr(LabeledExprParser.PrintExprContext ctx) {
 		Integer value = visit(ctx.expr()); // evaluate the expr child
+		System.out.println(value);
 		return value; // return dummy value
 	}
 

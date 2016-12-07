@@ -55,6 +55,7 @@ public class CalculatorTestNG {
 		new Object[] { "2^8<10" + end,0},
 		new Object[] { "a = 5+2" + end + "a+7" + end,14},
 		new Object[] { "a = 5+2" + end  + "#" + end+ "a+7" + end,7},
+		new Object[] { "195" + end + "a = 5" + end + "b = 6" + end + "c = 2*a - b" + end + "(a+b)* c" + end ,44}, // Jan-Erik Test (195 & 44)
     };
   }
 }
