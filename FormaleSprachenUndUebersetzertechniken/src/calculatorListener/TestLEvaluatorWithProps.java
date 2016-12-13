@@ -1,4 +1,4 @@
-package calculatorVisitor;
+package calculatorListener;
 
 /***
  * Excerpted from "The Definitive ANTLR 4 Reference",
@@ -11,12 +11,12 @@ package calculatorVisitor;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 
+import calculatorListener.grammatik.*;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-
-import calculatorVisitor.grammatik.*;
 
 public class TestLEvaluatorWithProps {
 	/** Sample "calculator" using property of nodes */

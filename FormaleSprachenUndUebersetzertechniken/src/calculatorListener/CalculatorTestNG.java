@@ -1,9 +1,9 @@
-package calculatorVisitor;
+package calculatorListener;
 
 import org.testng.annotations.Test;
 
-import calculatorVisitor.TestLEvaluatorWithProps.EvaluatorWithProps;
-import calculatorVisitor.grammatik.*;
+import calculatorListener.TestLEvaluatorWithProps.EvaluatorWithProps;
+import calculatorListener.grammatik.*;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
