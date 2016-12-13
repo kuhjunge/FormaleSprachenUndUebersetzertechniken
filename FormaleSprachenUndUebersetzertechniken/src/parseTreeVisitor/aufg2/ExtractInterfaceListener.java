@@ -1,4 +1,4 @@
-package parseTreeVisitor.Aufg2;
+package parseTreeVisitor.aufg2;
 
 /***
  * Excerpted from "The Definitive ANTLR 4 Reference",
@@ -10,7 +10,10 @@ package parseTreeVisitor.Aufg2;
 ***/
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.misc.Interval;
-import parseTreeVisitor.Aufg2.grammar.*;
+import org.antlr.v4.runtime.tree.TerminalNode;
+
+import parseTreeVisitor.aufg2.grammar.*;
+import parseTreeVisitor.aufg2.grammar.JavaParser.*;
 
 public class ExtractInterfaceListener extends JavaBaseListener {
     JavaParser parser;
@@ -21,10 +24,20 @@ public class ExtractInterfaceListener extends JavaBaseListener {
         System.out.println("interface I"+ctx.Identifier()+" {");
     }
     @Override
-    public void exitClassDeclaration(JavaParser.ClassDeclarationContext ctx) {
+    public void exitClassDeclaration(ClassDeclarationContext ctx) {
         System.out.println("}");
     }
-
+    
+    @Override
+    public void exitImportDeclaration(ImportDeclarationContext ctx) {
+    	String s= "import ";
+    	QualifiedNameContext qnc = ctx.qualifiedName();
+		for (TerminalNode n :qnc.Identifier()){
+			s += n.getText() + "." ;
+		}
+		System.out.println(s.substring(0, s.length()-1) + ";");
+    }
+    
     /** Listen to matches of methodDeclaration */
     @Override
     public void enterMethodDeclaration(

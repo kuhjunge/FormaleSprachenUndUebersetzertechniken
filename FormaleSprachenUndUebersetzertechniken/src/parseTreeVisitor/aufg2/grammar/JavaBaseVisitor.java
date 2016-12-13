@@ -1,5 +1,5 @@
 // Generated from Java.g4 by ANTLR 4.5.3
-package parseTreeVisitor.Aufg2.grammar;
+package parseTreeVisitor.aufg2.grammar;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
