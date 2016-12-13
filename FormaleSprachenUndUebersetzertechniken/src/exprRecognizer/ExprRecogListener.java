@@ -1,6 +1,5 @@
-// Generated from ExprRecog.g4 by ANTLR 4.4
+// Generated from ExprRecog.g4 by ANTLR 4.5.3
 package exprRecognizer;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -12,20 +11,20 @@ public interface ExprRecogListener extends ParseTreeListener {
 	 * Enter a parse tree produced by {@link ExprRecogParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void enterStat(@NotNull ExprRecogParser.StatContext ctx);
+	void enterStat(ExprRecogParser.StatContext ctx);
 	/**
 	 * Exit a parse tree produced by {@link ExprRecogParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void exitStat(@NotNull ExprRecogParser.StatContext ctx);
+	void exitStat(ExprRecogParser.StatContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ExprRecogParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr(@NotNull ExprRecogParser.ExprContext ctx);
+	void enterExpr(ExprRecogParser.ExprContext ctx);
 	/**
 	 * Exit a parse tree produced by {@link ExprRecogParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr(@NotNull ExprRecogParser.ExprContext ctx);
+	void exitExpr(ExprRecogParser.ExprContext ctx);
 }

@@ -92,6 +92,14 @@ public class ExprRecogParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_stat; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExprRecogListener ) ((ExprRecogListener)listener).enterStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExprRecogListener ) ((ExprRecogListener)listener).exitStat(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof ExprRecogVisitor ) return ((ExprRecogVisitor<? extends T>)visitor).visitStat(this);
 			else return visitor.visitChildren(this);
@@ -161,6 +169,14 @@ public class ExprRecogParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExprRecogListener ) ((ExprRecogListener)listener).enterExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExprRecogListener ) ((ExprRecogListener)listener).exitExpr(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof ExprRecogVisitor ) return ((ExprRecogVisitor<? extends T>)visitor).visitExpr(this);
