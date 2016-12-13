@@ -26,10 +26,12 @@ public class TestLEvaluatorWithProps {
 		Map<String, Integer> memory = new HashMap<String, Integer>();
 
 		/** Need to pass e's value out of rule s : e ; */
+		@Override
 		public void exitPrintExpr(LExprParser.PrintExprContext ctx) {
 			setValue(ctx, getValue(ctx.e())); // like: int s() { return e(); }
 		}
 
+		@Override
 		public void exitAssign(LExprParser.AssignContext ctx) {
 			String id = ctx.ID().getText(); // id is left-hand side of '='
 			int value = getValue(ctx.e()); // compute value of expression on right
@@ -37,70 +39,89 @@ public class TestLEvaluatorWithProps {
 			setValue(ctx, value); // like: int s() { return e(); }
 		}
 		
+		@Override
 		public void exitParens(LExprParser.ParensContext ctx) {
 			setValue(ctx, getValue(ctx.e())); 
 		}
 
+		@Override
 		public void exitClear(LExprParser.ClearContext ctx) {
 			memory = new HashMap<String, Integer>();
 		}
 
-		public void exitId(LExprParser.IdContext ctx) {
+		@Override
+		public void exitVar(LExprParser.VarContext ctx) {
 			int left = 0;
 			String id = ctx.ID().getText();
 			if (memory.containsKey(id)) {
 				left = memory.get(id);
+				System.out.println("test 3");
 			}
 			setValue(ctx, left);
+			System.out.println("test 2");
 		}
 
+		@Override
+		public void exitMain(LExprParser.MainContext ctx) {
+			setValue(ctx,getValue(ctx.s().get(ctx.s().size() - 1)));
+		}
+		
+		@Override
 		public void exitDiv(LExprParser.DivContext ctx) {
 			int left = getValue(ctx.e(0)); // e '*' e # Mult
 			int right = getValue(ctx.e(1));
 			setValue(ctx, left / right);
 		}
 
+		@Override
 		public void exitMul(LExprParser.MulContext ctx) {
 			int left = getValue(ctx.e(0)); // e '*' e # Mult
 			int right = getValue(ctx.e(1));
 			setValue(ctx, left * right);
 		}
 
+		@Override
 		public void exitAdd(LExprParser.AddContext ctx) {
 			int left = getValue(ctx.e(0)); // e '+' e # Add
 			int right = getValue(ctx.e(1));
 			setValue(ctx, left + right);
 		}
 
+		@Override
 		public void exitSub(LExprParser.SubContext ctx) {
 			int left = getValue(ctx.e(0)); // e '+' e # Add
 			int right = getValue(ctx.e(1));
 			setValue(ctx, left - right);
 		}
 
+		@Override
 		public void exitMinus(LExprParser.MinusContext ctx) {
 			int left = getValue(ctx.e()); // e '+' e # Add
 			setValue(ctx, -left);
 		}
 
+		@Override
 		public void exitSma(LExprParser.SmaContext ctx) {
 			int left = getValue(ctx.e(0)); // e '+' e # Add
 			int right = getValue(ctx.e(1));
 			setValue(ctx, (left < right) ? 1 : 0);
 		}
 
+		@Override
 		public void exitGre(LExprParser.GreContext ctx) {
 			int left = getValue(ctx.e(0)); // e '+' e # Add
 			int right = getValue(ctx.e(1));
 			setValue(ctx, (left < right) ? 1 : 0);
 		}
 
+		@Override
 		public void exitExp(LExprParser.ExpContext ctx) {
 			int left = getValue(ctx.e(0)); // e '+' e # Add
 			int right = getValue(ctx.e(1));
 			setValue(ctx, (int) Math.pow(left, right));
 		}
 
+		@Override
 		public void exitInt(LExprParser.IntContext ctx) {
 			String intText = ctx.INT().getText(); // INT # Int
 			setValue(ctx, Integer.valueOf(intText));

@@ -8,6 +8,18 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface LExprListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by the {@code main}
+	 * labeled alternative in {@link LExprParser#p}.
+	 * @param ctx the parse tree
+	 */
+	void enterMain(LExprParser.MainContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code main}
+	 * labeled alternative in {@link LExprParser#p}.
+	 * @param ctx the parse tree
+	 */
+	void exitMain(LExprParser.MainContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code printExpr}
 	 * labeled alternative in {@link LExprParser#s}.
 	 * @param ctx the parse tree
@@ -140,6 +152,18 @@ public interface LExprListener extends ParseTreeListener {
 	 */
 	void exitMul(LExprParser.MulContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code var}
+	 * labeled alternative in {@link LExprParser#e}.
+	 * @param ctx the parse tree
+	 */
+	void enterVar(LExprParser.VarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code var}
+	 * labeled alternative in {@link LExprParser#e}.
+	 * @param ctx the parse tree
+	 */
+	void exitVar(LExprParser.VarContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code sma}
 	 * labeled alternative in {@link LExprParser#e}.
 	 * @param ctx the parse tree
@@ -151,18 +175,6 @@ public interface LExprListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSma(LExprParser.SmaContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Id}
-	 * labeled alternative in {@link LExprParser#e}.
-	 * @param ctx the parse tree
-	 */
-	void enterId(LExprParser.IdContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Id}
-	 * labeled alternative in {@link LExprParser#e}.
-	 * @param ctx the parse tree
-	 */
-	void exitId(LExprParser.IdContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code gre}
 	 * labeled alternative in {@link LExprParser#e}.

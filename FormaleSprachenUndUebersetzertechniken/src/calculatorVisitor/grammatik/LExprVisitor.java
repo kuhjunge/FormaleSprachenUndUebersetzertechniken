@@ -11,6 +11,13 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface LExprVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by the {@code main}
+	 * labeled alternative in {@link LExprParser#p}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMain(LExprParser.MainContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code printExpr}
 	 * labeled alternative in {@link LExprParser#s}.
 	 * @param ctx the parse tree
@@ -88,19 +95,19 @@ public interface LExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMul(LExprParser.MulContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code var}
+	 * labeled alternative in {@link LExprParser#e}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVar(LExprParser.VarContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code sma}
 	 * labeled alternative in {@link LExprParser#e}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSma(LExprParser.SmaContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Id}
-	 * labeled alternative in {@link LExprParser#e}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitId(LExprParser.IdContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code gre}
 	 * labeled alternative in {@link LExprParser#e}.

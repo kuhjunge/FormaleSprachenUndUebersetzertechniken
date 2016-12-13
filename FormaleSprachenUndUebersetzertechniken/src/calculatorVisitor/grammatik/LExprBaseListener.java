@@ -16,6 +16,18 @@ public class LExprBaseListener implements LExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMain(LExprParser.MainContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMain(LExprParser.MainContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPrintExpr(LExprParser.PrintExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -148,6 +160,18 @@ public class LExprBaseListener implements LExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVar(LExprParser.VarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVar(LExprParser.VarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSma(LExprParser.SmaContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -155,18 +179,6 @@ public class LExprBaseListener implements LExprListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSma(LExprParser.SmaContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterId(LExprParser.IdContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitId(LExprParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

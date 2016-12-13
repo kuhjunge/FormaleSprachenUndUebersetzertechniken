@@ -1,4 +1,6 @@
 grammar LExpr;
+p : s+							#main
+	;
 
 s :   e NEWLINE                 # printExpr
     |   ID '=' e NEWLINE        # assign
@@ -18,7 +20,7 @@ e :  <assoc=right> e EXP e 		# exp
  	|   e SUB e  	    		# sub
     |   SUB e      				# minus
     |   INT                     # int
-    |   ID                      # Id
+    |   ID                      # var
     |   '(' e ')'            	# parens
     ;
 
