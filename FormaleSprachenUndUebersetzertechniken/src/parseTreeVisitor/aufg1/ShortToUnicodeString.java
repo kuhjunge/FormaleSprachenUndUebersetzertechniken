@@ -29,7 +29,10 @@ public class ShortToUnicodeString extends ArrayInitBaseListener {
         // Assumes no nested array initializers
         int value = Integer.valueOf(ctx.INT().getText());
         if (value >= 0 && value < 256){
-        	System.out.println(value);
+        //	System.out.println(value);
+        	System.out.printf("%b (%d), ", true, value);
+        } else {
+        	System.out.printf("%b (%d), ", false, value);
         }
     }
 }

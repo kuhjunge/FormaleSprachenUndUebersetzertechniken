@@ -17,7 +17,9 @@ import parseTreeVisitor.aufg1.grammar.*;
 public class Translate {
     public static void main(String[] args) throws Exception {
         // create a CharStream that reads from standard input
-        ANTLRInputStream input = new ANTLRInputStream(System.in);
+        //ANTLRInputStream input = new ANTLRInputStream(System.in);
+    	String s = "{1,289,4}";
+        ANTLRInputStream input = new ANTLRInputStream(s.toCharArray(), s.length());
         // create a lexer that feeds off of input CharStream
         ArrayInitLexer lexer = new ArrayInitLexer(input);
         // create a buffer of tokens pulled from the lexer
