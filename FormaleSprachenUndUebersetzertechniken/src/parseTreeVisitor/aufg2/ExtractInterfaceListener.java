@@ -30,12 +30,13 @@ public class ExtractInterfaceListener extends JavaBaseListener {
     
     @Override
     public void exitImportDeclaration(ImportDeclarationContext ctx) {
-    	String s= "import ";
+    	/* String s= "import ";
     	QualifiedNameContext qnc = ctx.qualifiedName();
 		for (TerminalNode n :qnc.Identifier()){
 			s += n.getText() + "." ;
 		}
-		System.out.println(s.substring(0, s.length()-1) + ";");
+		System.out.println(s.substring(0, s.length()-1) + ";"); */
+		System.out.println(parser.getTokenStream().getText(ctx.getRuleContext()));
     }
     
     /** Listen to matches of methodDeclaration */
