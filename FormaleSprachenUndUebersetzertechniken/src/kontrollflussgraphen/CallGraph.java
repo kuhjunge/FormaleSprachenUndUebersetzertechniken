@@ -35,6 +35,7 @@ public class CallGraph {
 
 	public static final String testinput2 = "void a(int x) { int y; if (y == 3) { b(); c(); } else {y = 4;} "
 			+ "for (i=0;i<=3;i=i+1){if(i==2) e(); d(); } }";
+
 	/**
 	 * A graph model of the output. Tracks call from one function to another by
 	 * mapping function to list of called functions. E.g., f -> [g, h] Can dump
@@ -54,7 +55,7 @@ public class CallGraph {
 		public String toString() {
 			return "edges: " + edges.toString() + ", functions: " + nodes;
 		}
-		
+
 		public String toDOT() {
 			StringBuilder buf = new StringBuilder();
 			buf.append("digraph G {\n");
@@ -106,36 +107,36 @@ public class CallGraph {
 		List<String> lastIf = new ArrayList<>();
 		boolean elsePart = false;
 		final String rootName = "root";
-		
+
 		@Override
 		public void enterFile(CymbolParser.FileContext ctx) {
 			currentFunctionName = rootName;
 			graph.nodes.add(currentFunctionName);
 		}
-		
+
 		@Override
 		public void enterVarDeclExtern(CymbolParser.VarDeclExternContext ctx) {
 			putNodeIn(getName(ctx.getText()));
 		}
-		
+
 		@Override
 		public void enterFunctionDecl(CymbolParser.FunctionDeclContext ctx) {
 			currentFunctionName = rootName;
 			putNodeIn(getName(ctx.ID().getText()));
 		}
-		
+
 		@Override
 		public void exitFunctionDecl(CymbolParser.FunctionDeclContext ctx) {
 			currentFunctionName = rootName;
 		}
-		
+
 		@Override
-		public void enterNormalstat(CymbolParser.NormalstatContext ctx){
+		public void enterNormalstat(CymbolParser.NormalstatContext ctx) {
 			putNodeIn(getName(ctx.getText()));
 
 		}
-		
-		private String getName(String name){
+
+		private String getName(String name) {
 			return "\"" + number++ + " " + name.replaceAll(";", "") + "\"";
 		}
 
@@ -143,7 +144,7 @@ public class CallGraph {
 			String oldFunctionName = currentFunctionName;
 			currentFunctionName = str;
 			graph.nodes.add(currentFunctionName);
-			if (!graph.edges.containsKey(oldFunctionName)){
+			if (!graph.edges.containsKey(oldFunctionName)) {
 				List<String> l = new ArrayList<>();
 				l.add(currentFunctionName);
 				graph.edges.put(oldFunctionName, l);
@@ -151,28 +152,28 @@ public class CallGraph {
 				graph.edges.get(oldFunctionName).add(currentFunctionName);
 			}
 		}
-		
+
 		@Override
-		public void enterIfelseStat(CymbolParser.IfelseStatContext ctx){
+		public void enterIfelseStat(CymbolParser.IfelseStatContext ctx) {
 			lastIf.add(currentFunctionName);
 			currentFunctionName = lastIf.get(lastIf.size() - 2);
 			elsePart = true;
 		}
-		
+
 		@Override
-		public void enterIfstat(CymbolParser.IfstatContext ctx){
+		public void enterIfstat(CymbolParser.IfstatContext ctx) {
 			lastIf.add(getName("if " + ctx.expr().getText()));
-			//lastIf.add(getName("if"));
+			// lastIf.add(getName("if"));
 			putNodeIn(lastIf.get(lastIf.size() - 1));
 		}
-		
+
 		@Override
-		public void exitIfstat(CymbolParser.IfstatContext ctx){
+		public void exitIfstat(CymbolParser.IfstatContext ctx) {
 			String exitname = getName("iend");
 			putNodeIn(exitname);
-			if (elsePart == false){
+			if (elsePart == false) {
 				graph.edges.get(lastIf.get(lastIf.size() - 1)).add(exitname);
-				
+
 			} else {
 				elsePart = false;
 				List<String> l = new ArrayList<>();
@@ -182,24 +183,24 @@ public class CallGraph {
 			}
 			lastIf.remove(lastIf.size() - 1);
 		}
-		
+
 		@Override
-		public void enterForstat(CymbolParser.ForstatContext ctx){
-			String name =getName("for") ;
+		public void enterForstat(CymbolParser.ForstatContext ctx) {
+			String name = getName("for");
 			putNodeIn(name);
 			lastIf.add(name);
-			currentFunctionName = name;	
+			currentFunctionName = name;
 		}
-		
+
 		@Override
-		public void exitForstat(CymbolParser.ForstatContext ctx){
+		public void exitForstat(CymbolParser.ForstatContext ctx) {
 			String exitNode = getName("f-end");
 			List<String> l = new ArrayList<>();
 			l.add(lastIf.get(lastIf.size() - 1));
 			// Kante zwischen letzten Statement -> for
 			graph.edges.put(currentFunctionName, l);
 			// add exitNode
-			currentFunctionName =  lastIf.get(lastIf.size() - 1);
+			currentFunctionName = lastIf.get(lastIf.size() - 1);
 			putNodeIn(exitNode);
 			lastIf.remove(lastIf.size() - 1);
 		}
@@ -225,7 +226,7 @@ public class CallGraph {
 		ParseTreeWalker walker = new ParseTreeWalker();
 		FunctionListener collector = new FunctionListener();
 		walker.walk(collector, tree);
-		//System.out.println(collector.graph.toString());
+		// System.out.println(collector.graph.toString());
 		System.out.println(collector.graph.toDOT());
 
 		// Here's another example that uses StringTemplate to generate output
