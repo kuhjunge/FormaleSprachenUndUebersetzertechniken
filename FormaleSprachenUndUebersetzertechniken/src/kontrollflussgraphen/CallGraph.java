@@ -33,6 +33,8 @@ public class CallGraph {
 			+ " for (j=0; j<=3; j=j+1) {" + "\r\n" + " x=3;" + "\r\n" + " y=5;" + "\r\n" + " if (j==3) x=3; else y=1;"
 			+ "\r\n" + " }" + "\r\n" + " if (i==4) { y=4;}" + "\r\n" + "}";
 
+	public static final String testinput2 = "void a(int x) { int y; if (y == 3) { b(); c(); } else {y = 4;} "
+			+ "for (i=0;i<=3;i=i+1){if(i==2) e(); d(); } }";
 	/**
 	 * A graph model of the output. Tracks call from one function to another by
 	 * mapping function to list of called functions. E.g., f -> [g, h] Can dump
@@ -52,14 +54,14 @@ public class CallGraph {
 		public String toString() {
 			return "edges: " + edges.toString() + ", functions: " + nodes;
 		}
-
+		
 		public String toDOT() {
 			StringBuilder buf = new StringBuilder();
 			buf.append("digraph G {\n");
 			buf.append("  ranksep=.25;\n");
 			buf.append("  edge [arrowsize=.5]\n");
-			buf.append("  node [shape=circle, fontname=\"ArialNarrow\",\n");
-			buf.append("        fontsize=12, fixedsize=true, height=.45];\n");
+			buf.append("  node [fontname=\"ArialNarrow\",\n");
+			buf.append("        fontsize=12];\n");
 			buf.append("  ");
 			for (String node : nodes) { // print all nodes first
 				buf.append(node);
@@ -103,10 +105,11 @@ public class CallGraph {
 		int number = 0;
 		List<String> lastIf = new ArrayList<>();
 		boolean elsePart = false;
+		final String rootName = "root";
 		
 		@Override
 		public void enterFile(CymbolParser.FileContext ctx) {
-			currentFunctionName = "root";
+			currentFunctionName = rootName;
 			graph.nodes.add(currentFunctionName);
 		}
 		
@@ -117,13 +120,13 @@ public class CallGraph {
 		
 		@Override
 		public void enterFunctionDecl(CymbolParser.FunctionDeclContext ctx) {
-			currentFunctionName = "root";
+			currentFunctionName = rootName;
 			putNodeIn(getName(ctx.ID().getText()));
 		}
 		
 		@Override
 		public void exitFunctionDecl(CymbolParser.FunctionDeclContext ctx) {
-			currentFunctionName = "root";
+			currentFunctionName = rootName;
 		}
 		
 		@Override
@@ -158,7 +161,8 @@ public class CallGraph {
 		
 		@Override
 		public void enterIfstat(CymbolParser.IfstatContext ctx){
-			lastIf.add(getName("if"));
+			lastIf.add(getName("if " + ctx.expr().getText()));
+			//lastIf.add(getName("if"));
 			putNodeIn(lastIf.get(lastIf.size() - 1));
 		}
 		

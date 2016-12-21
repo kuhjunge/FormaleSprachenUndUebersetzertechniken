@@ -43,7 +43,7 @@ ifstat: 'if' '(' expr ')' stat ifelseStat?;
 
 ifelseStat : 'else' stat;
  
-forstat: 'for' '('  expr'=' expr';' ID ('<'|'>'|'==' | '!=' | '<=') expr ';'	expr'='expr ')' stat  ;
+forstat: 'for' '('  expr'=' expr';' ID ('<'|'>'|'==' | '!=' | '<=' | '>=') expr ';'	expr'='expr ')' stat  ;
 
 /* expr below becomes the following non-left recursive rule:
 expr[int _p]
@@ -68,7 +68,7 @@ expr:   ID '(' exprList? ')'    # Call
     |   '!' expr                # Not
     |   expr '*' expr           # Mult
     |   expr ('+'|'-') expr     # AddSub
-    |   expr ('=='|'!=' | '<=') expr          # Equal
+    |   expr ('=='|'!=' | '<=' | '=>') expr          # Equal
     |   ID                      # Var
     |   INT                     # Int
     |   '(' expr ')'            # Parens
