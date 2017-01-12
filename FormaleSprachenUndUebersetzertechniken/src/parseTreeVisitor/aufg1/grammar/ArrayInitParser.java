@@ -1,4 +1,4 @@
-// Generated from ArrayInit.g4 by ANTLR 4.5.3
+// Generated from ArrayInit.g4 by ANTLR 4.6
 package parseTreeVisitor.aufg1.grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ArrayInitParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -176,6 +176,7 @@ public class ArrayInitParser extends Parser {
 		enterRule(_localctx, 2, RULE_value);
 		try {
 			setState(17);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
 				enterOuterAlt(_localctx, 1);

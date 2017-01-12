@@ -1,4 +1,4 @@
-// Generated from ArrayInit.g4 by ANTLR 4.5.3
+// Generated from ArrayInit.g4 by ANTLR 4.6
 package parseTreeVisitor.aufg1.grammar;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 

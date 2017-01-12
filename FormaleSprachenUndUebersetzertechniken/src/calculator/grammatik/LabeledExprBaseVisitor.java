@@ -1,4 +1,4 @@
-// Generated from LabeledExpr.g4 by ANTLR 4.5.3
+// Generated from LabeledExpr.g4 by ANTLR 4.6
 package calculator.grammatik;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 

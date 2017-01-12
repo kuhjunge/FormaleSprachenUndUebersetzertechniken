@@ -1,4 +1,4 @@
-// Generated from Cymbol.g4 by ANTLR 4.5.3
+// Generated from Cymbol.g4 by ANTLR 4.6
 package kontrollflussgraphen.grammatik;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 

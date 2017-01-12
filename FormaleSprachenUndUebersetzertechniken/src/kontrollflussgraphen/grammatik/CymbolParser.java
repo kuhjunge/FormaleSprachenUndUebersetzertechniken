@@ -1,4 +1,4 @@
-// Generated from Cymbol.g4 by ANTLR 4.5.3
+// Generated from Cymbol.g4 by ANTLR 4.6
 package kontrollflussgraphen.grammatik;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class CymbolParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -253,6 +253,7 @@ public class CymbolParser extends Parser {
 			setState(39);
 			match(ID);
 			setState(42);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__0) {
 				{
@@ -309,7 +310,10 @@ public class CymbolParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << K_FLOAT) | (1L << K_INT) | (1L << K_VOID) | (1L << K_CHAR))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -369,6 +373,7 @@ public class CymbolParser extends Parser {
 			setState(50);
 			match(T__2);
 			setState(52);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << K_FLOAT) | (1L << K_INT) | (1L << K_VOID) | (1L << K_CHAR))) != 0)) {
 				{
@@ -606,6 +611,7 @@ public class CymbolParser extends Parser {
 		enterRule(_localctx, 16, RULE_stat);
 		try {
 			setState(81);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__5:
 				enterOuterAlt(_localctx, 1);
@@ -709,6 +715,7 @@ public class CymbolParser extends Parser {
 				setState(84);
 				match(T__7);
 				setState(86);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__19) | (1L << T__20) | (1L << ID) | (1L << INT))) != 0)) {
 					{
@@ -925,7 +932,10 @@ public class CymbolParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			setState(118);
@@ -1196,6 +1206,7 @@ public class CymbolParser extends Parser {
 				setState(128);
 				match(T__2);
 				setState(130);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__19) | (1L << T__20) | (1L << ID) | (1L << INT))) != 0)) {
 					{
@@ -1296,7 +1307,10 @@ public class CymbolParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__19 || _la==T__22) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(150);
@@ -1313,7 +1327,10 @@ public class CymbolParser extends Parser {
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__23))) != 0)) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(153);

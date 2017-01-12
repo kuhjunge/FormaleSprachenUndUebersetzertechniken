@@ -1,4 +1,4 @@
-// Generated from Expr.g4 by ANTLR 4.5.3
+// Generated from Expr.g4 by ANTLR 4.6
 package calculator.interpreterGrammatik;
 
 import java.util.*;
@@ -14,7 +14,7 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExprLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =

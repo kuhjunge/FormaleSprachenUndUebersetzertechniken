@@ -1,4 +1,4 @@
-// Generated from ExprRecog.g4 by ANTLR 4.5.3
+// Generated from ExprRecog.g4 by ANTLR 4.6
 package exprRecognizer;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExprRecogParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -201,6 +201,7 @@ public class ExprRecogParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(23);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FLOAT:
 				{
@@ -267,7 +268,10 @@ public class ExprRecogParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__2 || _la==T__3) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(30);
@@ -284,7 +288,10 @@ public class ExprRecogParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__4 || _la==T__5) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(33);
@@ -301,7 +308,10 @@ public class ExprRecogParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__6 || _la==T__7) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(36);

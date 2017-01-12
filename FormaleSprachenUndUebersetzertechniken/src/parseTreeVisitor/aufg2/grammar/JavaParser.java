@@ -1,4 +1,4 @@
-// Generated from Java.g4 by ANTLR 4.5.3
+// Generated from Java.g4 by ANTLR 4.6
 package parseTreeVisitor.aufg2.grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class JavaParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -221,6 +221,7 @@ public class JavaParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(219);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__0) {
 				{
@@ -353,6 +354,7 @@ public class JavaParser extends Parser {
 			setState(239);
 			match(T__2);
 			setState(241);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__3) {
 				{
@@ -364,6 +366,7 @@ public class JavaParser extends Parser {
 			setState(243);
 			qualifiedName();
 			setState(246);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__4) {
 				{
@@ -430,6 +433,7 @@ public class JavaParser extends Parser {
 		try {
 			int _alt;
 			setState(262);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__3:
 			case T__6:
@@ -461,6 +465,7 @@ public class JavaParser extends Parser {
 					_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 				}
 				setState(259);
+				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case T__6:
 					{
@@ -553,6 +558,7 @@ public class JavaParser extends Parser {
 			setState(265);
 			match(Identifier);
 			setState(267);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__15) {
 				{
@@ -562,6 +568,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(271);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__7) {
 				{
@@ -573,6 +580,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(275);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__8) {
 				{
@@ -638,6 +646,7 @@ public class JavaParser extends Parser {
 			setState(280);
 			match(Identifier);
 			setState(283);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__8) {
 				{
@@ -694,6 +703,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 12, RULE_interfaceDeclaration);
 		try {
 			setState(289);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__21:
 				enterOuterAlt(_localctx, 1);
@@ -752,6 +762,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 14, RULE_classOrInterfaceModifier);
 		try {
 			setState(299);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__48:
 				enterOuterAlt(_localctx, 1);
@@ -988,6 +999,7 @@ public class JavaParser extends Parser {
 			setState(318);
 			match(Identifier);
 			setState(321);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__7) {
 				{
@@ -1111,6 +1123,7 @@ public class JavaParser extends Parser {
 			setState(331);
 			match(T__19);
 			setState(333);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__48 || _la==Identifier) {
 				{
@@ -1120,6 +1133,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(336);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__16) {
 				{
@@ -1129,6 +1143,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(339);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__1) {
 				{
@@ -1256,6 +1271,7 @@ public class JavaParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(352);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__48) {
 				{
@@ -1267,6 +1283,7 @@ public class JavaParser extends Parser {
 			setState(354);
 			match(Identifier);
 			setState(356);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__41) {
 				{
@@ -1276,6 +1293,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(359);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__19) {
 				{
@@ -1401,6 +1419,7 @@ public class JavaParser extends Parser {
 			setState(369);
 			match(Identifier);
 			setState(371);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__15) {
 				{
@@ -1410,6 +1429,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(375);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__7) {
 				{
@@ -1675,6 +1695,7 @@ public class JavaParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(407);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__3) {
 					{
@@ -1845,6 +1866,7 @@ public class JavaParser extends Parser {
 		int _la;
 		try {
 			setState(440);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__31:
 			case T__32:
@@ -1945,6 +1967,7 @@ public class JavaParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(444);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__25) {
 				{
@@ -1956,6 +1979,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(448);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__19:
 				{
@@ -2126,6 +2150,7 @@ public class JavaParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(458);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__15) {
 				{
@@ -2139,6 +2164,7 @@ public class JavaParser extends Parser {
 			setState(461);
 			formalParameters();
 			setState(464);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__25) {
 				{
@@ -2195,6 +2221,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 54, RULE_interfaceBodyDeclaration);
 		try {
 			setState(472);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__3:
 			case T__6:
@@ -2292,6 +2319,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 56, RULE_interfaceMemberDecl);
 		try {
 			setState(481);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__31:
 			case T__32:
@@ -2439,6 +2467,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 60, RULE_interfaceMethodOrFieldRest);
 		try {
 			setState(491);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__22:
 			case T__26:
@@ -2511,6 +2540,7 @@ public class JavaParser extends Parser {
 			setState(493);
 			formalParameters();
 			setState(496);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__25) {
 				{
@@ -2522,6 +2552,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(500);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__19:
 				{
@@ -2603,6 +2634,7 @@ public class JavaParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(512);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__25) {
 				{
@@ -2667,6 +2699,7 @@ public class JavaParser extends Parser {
 			setState(516);
 			typeParameters();
 			setState(519);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__31:
 			case T__32:
@@ -2744,6 +2777,7 @@ public class JavaParser extends Parser {
 			setState(524);
 			formalParameters();
 			setState(527);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__25) {
 				{
@@ -2916,6 +2950,7 @@ public class JavaParser extends Parser {
 			setState(542);
 			variableDeclaratorId();
 			setState(545);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__26) {
 				{
@@ -3159,6 +3194,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 82, RULE_variableInitializer);
 		try {
 			setState(575);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__19:
 				enterOuterAlt(_localctx, 1);
@@ -3254,6 +3290,7 @@ public class JavaParser extends Parser {
 			setState(577);
 			match(T__19);
 			setState(589);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__19) | (1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 				{
@@ -3278,6 +3315,7 @@ public class JavaParser extends Parser {
 					_alt = getInterpreter().adaptivePredict(_input,55,_ctx);
 				}
 				setState(587);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__16) {
 					{
@@ -3332,6 +3370,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 86, RULE_modifier);
 		try {
 			setState(605);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__48:
 				enterOuterAlt(_localctx, 1);
@@ -3594,6 +3633,7 @@ public class JavaParser extends Parser {
 		try {
 			int _alt;
 			setState(629);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
@@ -3788,7 +3828,10 @@ public class JavaParser extends Parser {
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -3832,6 +3875,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 100, RULE_variableModifier);
 		try {
 			setState(649);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__13:
 				enterOuterAlt(_localctx, 1);
@@ -3959,6 +4003,7 @@ public class JavaParser extends Parser {
 		int _la;
 		try {
 			setState(668);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__31:
 			case T__32:
@@ -3981,6 +4026,7 @@ public class JavaParser extends Parser {
 				setState(663);
 				match(T__39);
 				setState(666);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__7 || _la==T__40) {
 					{
@@ -3988,7 +4034,10 @@ public class JavaParser extends Parser {
 					_la = _input.LA(1);
 					if ( !(_la==T__7 || _la==T__40) ) {
 					_errHandler.recoverInline(this);
-					} else {
+					}
+					else {
+						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+						_errHandler.reportMatch(this);
 						consume();
 					}
 					setState(665);
@@ -4110,6 +4159,7 @@ public class JavaParser extends Parser {
 			setState(678);
 			match(T__41);
 			setState(680);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__48))) != 0) || _la==Identifier) {
 				{
@@ -4219,6 +4269,7 @@ public class JavaParser extends Parser {
 		int _la;
 		try {
 			setState(695);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
@@ -4226,6 +4277,7 @@ public class JavaParser extends Parser {
 				setState(688);
 				variableDeclaratorId();
 				setState(691);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__16) {
 					{
@@ -4424,6 +4476,7 @@ public class JavaParser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(712);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__15) {
 					{
@@ -4436,7 +4489,10 @@ public class JavaParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==T__40 || _la==T__44) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				setState(715);
@@ -4453,6 +4509,7 @@ public class JavaParser extends Parser {
 				setState(719);
 				match(T__4);
 				setState(721);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__15) {
 					{
@@ -4580,6 +4637,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 122, RULE_literal);
 		try {
 			setState(743);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case HexLiteral:
 			case DecimalLiteral:
@@ -4675,7 +4733,10 @@ public class JavaParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(((((_la - 90)) & ~0x3f) == 0 && ((1L << (_la - 90)) & ((1L << (HexLiteral - 90)) | (1L << (DecimalLiteral - 90)) | (1L << (OctalLiteral - 90)))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -4722,7 +4783,10 @@ public class JavaParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==T__46 || _la==T__47) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -4839,6 +4903,7 @@ public class JavaParser extends Parser {
 			setState(755);
 			annotationName();
 			setState(762);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__41) {
 				{
@@ -5087,6 +5152,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 138, RULE_elementValue);
 		try {
 			setState(787);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__24:
 			case T__31:
@@ -5189,6 +5255,7 @@ public class JavaParser extends Parser {
 			setState(789);
 			match(T__19);
 			setState(798);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__19) | (1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 				{
@@ -5216,6 +5283,7 @@ public class JavaParser extends Parser {
 			}
 
 			setState(801);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__16) {
 				{
@@ -5447,6 +5515,7 @@ public class JavaParser extends Parser {
 		int _la;
 		try {
 			setState(842);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__31:
 			case T__32:
@@ -5473,6 +5542,7 @@ public class JavaParser extends Parser {
 				setState(826);
 				classDeclaration();
 				setState(828);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__1) {
 					{
@@ -5489,6 +5559,7 @@ public class JavaParser extends Parser {
 				setState(830);
 				normalInterfaceDeclaration();
 				setState(832);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__1) {
 					{
@@ -5505,6 +5576,7 @@ public class JavaParser extends Parser {
 				setState(834);
 				enumDeclaration();
 				setState(836);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__1) {
 					{
@@ -5521,6 +5593,7 @@ public class JavaParser extends Parser {
 				setState(838);
 				annotationTypeDeclaration();
 				setState(840);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__1) {
 					{
@@ -5644,6 +5717,7 @@ public class JavaParser extends Parser {
 			setState(850);
 			match(T__42);
 			setState(852);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__49) {
 				{
@@ -6137,6 +6211,7 @@ public class JavaParser extends Parser {
 				setState(889);
 				expression(0);
 				setState(892);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==T__50) {
 					{
@@ -6280,6 +6355,7 @@ public class JavaParser extends Parser {
 				setState(938);
 				match(T__59);
 				setState(940);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 					{
@@ -6309,6 +6385,7 @@ public class JavaParser extends Parser {
 				setState(947);
 				match(T__61);
 				setState(949);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Identifier) {
 					{
@@ -6327,6 +6404,7 @@ public class JavaParser extends Parser {
 				setState(952);
 				match(T__62);
 				setState(954);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==Identifier) {
 					{
@@ -6852,6 +6930,7 @@ public class JavaParser extends Parser {
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(1023);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 					{
@@ -6863,6 +6942,7 @@ public class JavaParser extends Parser {
 				setState(1025);
 				match(T__1);
 				setState(1027);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 					{
@@ -6874,6 +6954,7 @@ public class JavaParser extends Parser {
 				setState(1029);
 				match(T__1);
 				setState(1031);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 					{
@@ -7336,7 +7417,10 @@ public class JavaParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(((((_la - 67)) & ~0x3f) == 0 && ((1L << (_la - 67)) & ((1L << (T__66 - 67)) | (1L << (T__67 - 67)) | (1L << (T__68 - 67)) | (1L << (T__69 - 67)))) != 0)) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				setState(1066);
@@ -7349,7 +7433,10 @@ public class JavaParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==T__70 || _la==T__71) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				setState(1068);
@@ -7399,7 +7486,10 @@ public class JavaParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__5 || _la==T__72 || _la==T__73) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(1080);
@@ -7416,7 +7506,10 @@ public class JavaParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__68 || _la==T__69) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(1083);
@@ -7515,7 +7608,10 @@ public class JavaParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__75 || _la==T__76) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(1107);
@@ -7735,6 +7831,7 @@ public class JavaParser extends Parser {
 						setState(1161);
 						match(T__41);
 						setState(1163);
+						_errHandler.sync(this);
 						_la = _input.LA(1);
 						if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 							{
@@ -7762,6 +7859,7 @@ public class JavaParser extends Parser {
 						setState(1170);
 						match(T__41);
 						setState(1172);
+						_errHandler.sync(this);
 						_la = _input.LA(1);
 						if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 							{
@@ -7835,6 +7933,7 @@ public class JavaParser extends Parser {
 						setState(1192);
 						match(T__41);
 						setState(1194);
+						_errHandler.sync(this);
 						_la = _input.LA(1);
 						if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 							{
@@ -7857,7 +7956,10 @@ public class JavaParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==T__66 || _la==T__67) ) {
 						_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						}
@@ -8042,6 +8144,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 202, RULE_creator);
 		try {
 			setState(1233);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__15:
 				enterOuterAlt(_localctx, 1);
@@ -8068,6 +8171,7 @@ public class JavaParser extends Parser {
 				setState(1228);
 				createdName();
 				setState(1231);
+				_errHandler.sync(this);
 				switch (_input.LA(1)) {
 				case T__22:
 					{
@@ -8132,6 +8236,7 @@ public class JavaParser extends Parser {
 		enterRule(_localctx, 204, RULE_createdName);
 		try {
 			setState(1237);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Identifier:
 				enterOuterAlt(_localctx, 1);
@@ -8204,6 +8309,7 @@ public class JavaParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1240);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__15) {
 				{
@@ -8321,6 +8427,7 @@ public class JavaParser extends Parser {
 			setState(1249);
 			match(T__22);
 			setState(1277);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__23:
 				{
@@ -8574,6 +8681,7 @@ public class JavaParser extends Parser {
 			setState(1287);
 			match(T__41);
 			setState(1289);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__24) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47))) != 0) || ((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)) | (1L << (T__69 - 66)) | (1L << (T__70 - 66)) | (1L << (T__71 - 66)) | (1L << (HexLiteral - 66)) | (1L << (DecimalLiteral - 66)) | (1L << (OctalLiteral - 66)) | (1L << (FloatingPointLiteral - 66)) | (1L << (CharacterLiteral - 66)) | (1L << (StringLiteral - 66)) | (1L << (Identifier - 66)))) != 0)) {
 				{

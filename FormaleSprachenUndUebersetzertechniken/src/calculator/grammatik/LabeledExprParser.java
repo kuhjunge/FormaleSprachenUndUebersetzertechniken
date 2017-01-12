@@ -1,4 +1,4 @@
-// Generated from LabeledExpr.g4 by ANTLR 4.5.3
+// Generated from LabeledExpr.g4 by ANTLR 4.6
 package calculator.grammatik;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class LabeledExprParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -414,6 +414,7 @@ public class LabeledExprParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(36);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case SUB:
 				{
@@ -496,7 +497,10 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==SMA || _la==GRE) ) {
 							((SmaGreContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(43);
@@ -514,7 +518,10 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==MUL || _la==DIV) ) {
 							((MulDivContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(46);
@@ -532,7 +539,10 @@ public class LabeledExprParser extends Parser {
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
 							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
-						} else {
+						}
+						else {
+							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+							_errHandler.reportMatch(this);
 							consume();
 						}
 						setState(49);

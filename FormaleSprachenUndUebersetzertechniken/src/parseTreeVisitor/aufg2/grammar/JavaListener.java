@@ -1,4 +1,4 @@
-// Generated from Java.g4 by ANTLR 4.5.3
+// Generated from Java.g4 by ANTLR 4.6
 package parseTreeVisitor.aufg2.grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
