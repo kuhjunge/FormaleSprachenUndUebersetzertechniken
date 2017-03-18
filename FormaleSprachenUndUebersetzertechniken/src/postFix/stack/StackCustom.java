@@ -23,7 +23,6 @@ public class StackCustom<E> implements IStackAdapter<E> {
 
 	@Override
 	public E pop() {
-		// TODO Auto-generated method stub
 		return this.s.popTop();
 	}
 
